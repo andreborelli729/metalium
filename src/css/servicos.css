@@ -1,0 +1,186 @@
+:root{
+
+
+
+
+    --fullWidth: 100vw;
+    --metaliumMobileContainer: 90vw;
+    --metaliumMobileContainer2: 95vw;
+
+    
+    
+    --normalWeight: 400;
+    --normalBoldWeight: 500;
+    --boldWeight: 600;
+    --superBold: 700;
+    
+    --mainFontFamily: 'Arial';
+    
+    --titleFontSize1: 36px;
+    --titleFontSize2: 42px;
+    --titleFontSize3: 48px;
+    --titleFontSize4: 56px;
+    --titleFontSize5: 62px;
+    
+    
+    --metaliumFontSize1: 14px;
+    --metaliumFontSize2: 16px;
+    --metaliumFontSize3: 18px
+    --metaliumFontSize4: 20px;
+    --metaliumFontSize5: 22px;
+    --metaliumFontSize6: 24px;
+    
+    --metaliumLineHeight1: 115%;
+    --metaliumLineHeight3: 130%;
+    --MetaliumLineHeight4: 150%;
+    
+    --whiteColor: #ffffff;
+    --metaliumWhiteColor1: #f3f3f3;
+    --metaliumWhiteColor2: #EDEDED;
+    --metaliumWhiteColor3: #DEE6F1;
+    
+    --metaliumGreyColor3:  #7A7A7A;
+    
+    
+    
+    --metaliumGreyColor1: #B5B5B5;
+    --metaliumGreyColor2: #656565;
+    --metaliumGreyColor3:  #7A7A7A;
+    --metaliumBlueColor1: #02A8DA;
+    --metaliumBlueColor2: #0E1525;
+    --metaliumBlueColor3: #173046;
+    
+    --metaliumBorder1: 3px solid #0E1525;
+    --metaliumBorder2: 1px solid #0E1525;
+    --metaliumBorder3: 1px solid #DEE6F1;
+    --metaliumBorderRadius1: 1px;
+    --metaliumBorderRadius2: 2px;
+    --metaliumBorderRadius3: 3px;
+    --metaliumBorderRadius4: 4px;
+    --metaliumBorderRadius5: 5px;
+    
+    
+    --metaliumBgBlueOpacity1: rgba(14, 21, 37, 0.8);
+    
+    --metaliumShadow1: inset 0px 2px 2px rgba(0, 0, 0, 0.25);
+    --widthTablet: 70vw;
+    --sustainableTextWidth: 44vw;
+    --sustainableMobilePadding: 5vw;
+    --sustainableTabletPadding: 14vw;
+    --sustainablePaddingTop: 50px;
+    --sustainableBannerMarginTop1: calc(0.7*10vw);
+    --sustainableBannerMarginTop2: calc(0.5*6vw)
+
+   
+
+}
+@media screen and (min-width: 300px) { 
+    .servicos{
+width:0.001px;
+display:none;
+opacity:0;
+height: 0.0001px;
+}
+}
+@media screen and (min-width: 750px) { 
+.servicos{
+    width: 100%;
+    height: auto;
+    padding-top: 5vw;
+    padding-left: 0;
+    display:block;
+    opacity:1;
+    box-sizing: border-box;
+    background-color: var(--metaliumGreyColor1);
+}
+
+.servicosArea1, .servicosArea2, .servicosArea3{
+    display:grid;
+    grid-template-columns:1fr,3fr;
+    width: 76%;
+    margin-left:12%;
+    border: 2px, solid, black;
+}
+
+.servicosImg{
+    grid-column:1;
+    width: 22vw;
+}
+
+.servicosTextArea1, .servicosTextArea2, .servicosTextArea3{
+    grid-column:2;
+    width: 67vw;
+}
+
+.servicosBtn{
+    font-family:var(--mainFontFamily);
+    font-style: normal;
+    font-size: var(--metaliumFontSize4);
+    line-height: 23px;
+    font-weight: var(--superBold);
+
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--metaliumBorderRadius1);
+
+    background: var(--metaliumBlueColor1);
+    color: var(--whiteColor);
+
+    cursor: pointer;
+
+}
+
+.servicosParagraph{
+    margin-top: 33px;
+
+		font-family: var(--mainFontFamily);
+		font-style: normal;
+		font-weight:var(--normalWeight);
+		font-size: var(--metaliumFontSize4);
+		line-height: 150%;
+        width: 50vw;
+		color: var(--metaliumGreyColor2);
+}
+
+.servicosTitle{
+    font-family: var(--mainFontFamily);
+    font-style: normal;
+    font-weight: var(--superBold);
+    font-size: 28px;
+    line-height: 34px;
+    width:50vw;
+    color: var(--metaliumBlueColor3);
+}
+
+.clienteTitle1, .clienteTitle2, .clienteTitle3{
+	font-family: var(--mainFontFamily);
+		font-style: normal;
+		font-weight: var(--superBold);
+}
+.clienteTitle{
+    color: var(--metaliumBlueColor3);
+    font-size: 36px;
+    line-height: 100%;
+
+}
+
+.clienteTitle2{
+    color: black;
+    font-size: 20px;
+    font-size: 30px;
+
+}
+
+.clienteSpan{
+    color: var(--metaliumBlueColor3);
+    font-size: 20px;
+		line-height: 23px;
+}
+.clienteParagraph{
+    font-size: 20px;
+		line-height: 23px;
+		
+		color: var(--metaliumGreyColor2);
+}
+
+}

@@ -1,0 +1,197 @@
+:root{
+    --fullWidth: 100vw;
+    --metaliumMobileContainer: 90vw;
+    --metaliumMobileContainer2: 95vw;
+    
+    --normalWeight: 400;
+    --normalBoldWeight: 500;
+    --boldWeight: 600;
+    --superBold: 700;
+    
+    --mainFontFamily: 'Arial';
+    
+    --titleFontSize1: 36px;
+    --titleFontSize2: 42px;
+    --titleFontSize3: 48px;
+    --titleFontSize4: 56px;
+    --titleFontSize5: 62px;
+    
+    
+    --metaliumFontSize1: 14px;
+    --metaliumFontSize2: 16px;
+    --metaliumFontSize3: 18px
+    --metaliumFontSize4: 20px;
+    --metaliumFontSize5: 22px;
+    --metaliumFontSize6: 24px;
+    
+    --metaliumLineHeight1: 115%;
+    --metaliumLineHeight3: 130%;
+    --MetaliumLineHeight4: 150%;
+    
+    --whiteColor: #ffffff;
+    --metaliumWhiteColor1: #f3f3f3;
+    --metaliumWhiteColor2: #EDEDED;
+    --metaliumWhiteColor3: #DEE6F1;
+    
+    --metaliumGreyColor3:  #7A7A7A;
+    
+    
+    
+    --metaliumGreyColor1: #B5B5B5;
+    --metaliumGreyColor2: #656565;
+    --metaliumGreyColor3:  #7A7A7A;
+    --metaliumBlueColor1: #02A8DA;
+    --metaliumBlueColor2: #0E1525;
+    --metaliumBlueColor3: #173046;
+    
+    --metaliumBorder1: 3px solid #0E1525;
+    --metaliumBorder2: 1px solid #0E1525;
+    --metaliumBorder3: 1px solid #DEE6F1;
+    --metaliumBorderRadius1: 1px;
+    --metaliumBorderRadius2: 2px;
+    --metaliumBorderRadius3: 3px;
+    --metaliumBorderRadius4: 4px;
+    --metaliumBorderRadius5: 5px;
+    
+    
+    --metaliumBgBlueOpacity1: rgba(14, 21, 37, 0.8);
+    
+    --metaliumShadow1: inset 0px 2px 2px rgba(0, 0, 0, 0.25);
+    
+    }
+    
+    @media screen and (min-width: 300px) { 
+        .cotacao{
+            width: 100%;
+            height: auto;
+            background-color: var(--metaliumBlueColor1);        
+        
+        
+        }
+        .cotacaoTitle{
+            font-size: var(--titleFontSize2);
+            line-height: var(--metaliumLineHeight1);
+            font-weight: 800;
+            color: var(--metaliumBlueColor2);
+            text-align:center;
+        }
+    }
+
+    .cotacaoParagraph{
+        color:  var(--whiteColor);
+        font-size: var(--metaliumFontSize6);
+        line-height: var(--MetaliumLineHeight4);
+        font-weight: var(--normalWeight);
+        text-align:center;
+
+}
+
+.cotacaoParagraph2{
+padding-top:5vh;
+color: var(--metaliumBlueColor2);
+font-size: var(--metaliumFontSize6);
+line-height: var(--MetaliumLineHeight4);
+font-weight: var(--normalWeight);   
+text-align:center;  
+}
+
+.cotacaoForm{
+display:block;
+width:100vw;
+padding-left:5vw;
+}
+#nome, #email, #empresa, #telefone{
+    color:var(--metaliumGreyColor1);
+           font-size: var(--metaliumFontSize4);
+           line-height: var(--MetaliumLineHeight4);
+           font-weight: var(--normalWeight);   
+           width:84vw;
+           background-color: var(--metaliumWhiteColor1);
+           margin-top:5vh;
+           height: 8vh;
+        }
+        .cotacaoBtn{
+            width: 80vw;
+            margin-left:10vw;
+            height: 15vh;
+            background-color: var(--metaliumBlueColor2);
+            color: var(--whiteColor);
+            font-size: 20px;
+            font-weight:800;
+            text-align:center;
+            margin-top: 15vh;
+            cursor: pointer;
+        
+        }
+
+
+    @media screen and (min-width: 500px) { 
+   
+
+        .cotacaoBtn{
+width:36vw;
+margin-left:32vw;
+      
+        }
+        .cotacaoForm{
+            display:grid;
+            width:100%;
+            padding-left:0;
+            grid-template-columns:1fr,1fr;
+            grid-template-rows:1fr,1fr;
+        }
+#nome, #email, #empresa, #telefone,#nome::placeholder, #telefone::placeholder, #email::placeholder, #empresa::placeholder{
+    
+           font-size: var(--metaliumFontSize6);
+           line-height: var(--MetaliumLineHeight6);
+           font-weight: var(--normalWeight);    
+}
+        #nome{
+            grid-column:1;
+            grid-row:1;
+            width:40vw;
+            height: 8vh;
+            margin-left:5vw;
+            background-color: var(--metaliumWhiteColor1);
+
+
+        }
+        #telefone{
+            grid-column:2;
+            grid-row:1;
+            width:40vw;
+            height: 8vh;
+            background-color: var(--metaliumWhiteColor1);
+
+        }
+        #email{
+            grid-column:1;
+            margin-left:5vw;
+            margin-top:8vh;
+            grid-row:2;
+            width:40vw;
+            height: 8vh;
+            background-color: var(--metaliumWhiteColor1);
+
+        }
+        #empresa{
+            grid-column:2;
+            grid-row:2;
+            width:40vw;
+            margin-top: 8vh;
+            height: 8vh;
+            background-color: var(--metaliumWhiteColor1);
+
+        }
+
+
+        #nome::placeholder, #telefone::placeholder, #email::placeholder, #empresa::placeholder{
+           color:var(--metaliumGreyColor1);
+           font-size: var(--metaliumFontSize6);
+           line-height: var(--MetaliumLineHeight6);
+           font-weight: var(--normalWeight);    
+            
+        }
+
+        
+    }

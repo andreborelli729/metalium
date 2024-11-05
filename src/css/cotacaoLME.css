@@ -1,0 +1,182 @@
+:root{
+    --fullWidth: 100vw;
+    --metaliumMobileContainer: 90vw;
+    --metaliumMobileContainer2: 95vw;
+    
+    --normalWeight: 400;
+    --normalBoldWeight: 500;
+    --boldWeight: 600;
+    --superBold: 700;
+    
+    --mainFontFamily: 'Arial';
+    
+    --titleFontSize1: 36px;
+    --titleFontSize2: 42px;
+    --titleFontSize3: 48px;
+    --titleFontSize4: 56px;
+    --titleFontSize5: 62px;
+    
+    
+    --metaliumFontSize1: 14px;
+    --metaliumFontSize2: 16px;
+    --metaliumFontSize3: 18px
+    --metaliumFontSize4: 20px;
+    --metaliumFontSize5: 22px;
+    --metaliumFontSize6: 24px;
+    
+    --metaliumLineHeight1: 115%;
+    --metaliumLineHeight3: 130%;
+    --MetaliumLineHeight4: 150%;
+    
+    --whiteColor: #ffffff;
+    --metaliumWhiteColor1: #f3f3f3;
+    --metaliumWhiteColor2: #EDEDED;
+    --metaliumWhiteColor3: #DEE6F1;
+    
+    --metaliumGreyColor3:  #7A7A7A;
+    
+    
+    
+    --metaliumGreyColor1: #B5B5B5;
+    --metaliumGreyColor2: #656565;
+    --metaliumGreyColor3:  #7A7A7A;
+    --metaliumBlueColor1: #02A8DA;
+    --metaliumBlueColor2: #0E1525;
+    --metaliumBlueColor3: #173046;
+    
+    --metaliumBorder1: 3px solid #0E1525;
+    --metaliumBorder2: 1px solid #0E1525;
+    --metaliumBorder3: 1px solid #DEE6F1;
+    --metaliumBorderRadius1: 1px;
+    --metaliumBorderRadius2: 2px;
+    --metaliumBorderRadius3: 3px;
+    --metaliumBorderRadius4: 4px;
+    --metaliumBorderRadius5: 5px;
+    
+    
+    --metaliumBgBlueOpacity1: rgba(14, 21, 37, 0.8);
+    
+    --metaliumShadow1: inset 0px 2px 2px rgba(0, 0, 0, 0.25);
+    
+    }
+    @media screen and (min-width: 300px) { 
+        .cotacaoLME{
+            display:block;
+            background-color: var(--metaliumGreyColor1);
+            width: 100vw;
+            height: auto;
+            padding-bottom:8vh;
+
+        }
+.cotacaoLMETitle, .cotacaoLMEParagraph, .cotacaoLMEImg{
+width:90vw;
+margin-left:5vw;
+}
+.cotacaoLMETitle{
+    color: var(--metaliumBlueColor2);
+    font-size: 34px;
+    font-weight: bold;
+}
+.cotacaoLMEParagraph{
+    color: var(--metaliumGreyColor2);
+    font-size: 20px;
+    font-weight: 500;
+}
+.cotacaoLMEFormTitle{
+    color: var(--metaliumBlueColor2);
+    font-size:32px;
+    font-weight:bold;
+    text-align:center;
+    padding-top: 8vh;
+}
+.cotacaoLMEForm{
+    margin-left:5vw;  
+    background-color: var(--metaliumBlueColor1);
+    width: 90vw;
+    height: auto;
+}
+#nomeLME, #emailLME{
+    margin-top: 5vh;
+    width: 90vw;
+    box-sizing: border-box;
+    height: 12vh;
+    color: var(--metaliumGreyColor1);
+    font-size:22px;
+    font-weight:bold;
+}
+.cotacaoLMEBtn{
+    width:90vw;
+    background-color: var(--metaliumBlueColor3);
+    color: var(--whiteColor);
+    height:12vh;
+    text-align:center;
+    margin-top:5vh;
+    margin-bottom:5vh;
+}
+
+    }
+
+    @media screen and (min-width: 600px) { 
+        .cotacaoLME{
+            display:grid;
+            grid-template-columns:1fr,1fr;
+            width: 100%;
+          
+
+        }
+
+        .cotacaoLMEGridContainer1{
+            grid-column:1;
+
+        }
+
+        .cotacaoLMEGridContainer2{
+            grid-column:2;
+            
+       
+        }
+
+        .cotacaoLMETitle, .cotacaoLMEParagraph, .cotacaoLMEImg{
+            width:34vw;
+            margin-left: 8vw;
+        }
+
+        
+
+       
+        .cotacaoLMEForm{
+            
+            width: 50vw;
+        }
+
+        #nomeLME::placeholder, #emailLME::placeholder{
+            color: var(--metaliumGreyColor1);
+            font-size:24px;
+            font-weight:bold;
+        }
+
+        #nomeLME, #emailLME{
+            margin-left:5vw;
+            width: 40vw;
+            height: 8vh;
+          
+        }
+.cotacaoLMEBtn{
+    width:40vw;
+    height:8vh;
+    margin-left:5vw;
+    margin-bottom: 0;
+}
+    }
+
+    @media screen and (min-width: 750px) { 
+        .cotacaoLMETitle{
+            font-size: 42px;
+        }
+        .cotacaoLMEParagraph{
+            font-size: 24px;
+        }
+     .cotacaoLMEFormTitle{
+font-size:42px;
+     }
+    }
