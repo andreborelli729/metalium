@@ -1,55 +1,49 @@
 :root{
-
-
-
-
+    /* ... (keep existing :root variables from cotacao.css or a global file) ... */
     --fullWidth: 100vw;
     --metaliumMobileContainer: 90vw;
     --metaliumMobileContainer2: 95vw;
 
-    
-    
     --normalWeight: 400;
     --normalBoldWeight: 500;
     --boldWeight: 600;
     --superBold: 700;
-    
+
     --mainFontFamily: 'Arial';
-    
+
     --titleFontSize1: 36px;
     --titleFontSize2: 42px;
     --titleFontSize3: 48px;
     --titleFontSize4: 56px;
     --titleFontSize5: 62px;
-    
-    
+
+
     --metaliumFontSize1: 14px;
     --metaliumFontSize2: 16px;
-    --metaliumFontSize3: 18px
+    --metaliumFontSize3: 18px;
     --metaliumFontSize4: 20px;
     --metaliumFontSize5: 22px;
     --metaliumFontSize6: 24px;
-    
+
     --metaliumLineHeight1: 115%;
     --metaliumLineHeight3: 130%;
     --MetaliumLineHeight4: 150%;
-    
+
     --whiteColor: #ffffff;
     --metaliumWhiteColor1: #f3f3f3;
-    --metaliumWhiteColor2: #EDEDED;
+    --metaliumWhiteColor2: #EDEDED; /* Used as fallback for metaliumWhiteColor4 */
     --metaliumWhiteColor3: #DEE6F1;
-    
-    --metaliumGreyColor3:  #7A7A7A;
-    
-    
-    
+    /* --metaliumWhiteColor4: (some value if defined elsewhere, otherwise using fallback) */
+
+
     --metaliumGreyColor1: #B5B5B5;
     --metaliumGreyColor2: #656565;
     --metaliumGreyColor3:  #7A7A7A;
+
     --metaliumBlueColor1: #02A8DA;
     --metaliumBlueColor2: #0E1525;
     --metaliumBlueColor3: #173046;
-    
+
     --metaliumBorder1: 3px solid #0E1525;
     --metaliumBorder2: 1px solid #0E1525;
     --metaliumBorder3: 1px solid #DEE6F1;
@@ -58,111 +52,183 @@
     --metaliumBorderRadius3: 3px;
     --metaliumBorderRadius4: 4px;
     --metaliumBorderRadius5: 5px;
-    
-    
+
+
     --metaliumBgBlueOpacity1: rgba(14, 21, 37, 0.8);
-    
+
     --metaliumShadow1: inset 0px 2px 2px rgba(0, 0, 0, 0.25);
-    --widthTablet: 70vw;
-    --sustainableTextWidth: 44vw;
-    --sustainableMobilePadding: 5vw;
-    --sustainableTabletPadding: 14vw;
-    --sustainablePaddingTop: 50px;
-    --sustainableBannerMarginTop1: calc(0.7*10vw);
-    --sustainableBannerMarginTop2: calc(0.5*6vw)
-
-   
-
+    /* ... other variables ... */
 }
-@media screen and (min-width: 1px) { 
+@media screen and (min-width: 1px) {
     .politicaAmbiental{
-display:none;
-width:0.0001px;
-height:0.0001px;
-opacity:0;
+        display:none;
+        width:0.0001px; /* These are effectively hiding it */
+        height:0.0001px;
+        opacity:0;
     }
-
 }
-@media screen and (min-width: 721px) { 
+@media screen and (min-width: 721px) {
 
     .politicaAmbiental{
-        background-color: var(--metaliumWhiteColor4);
+        background-color: var(--metaliumWhiteColor2); /* Assuming --metaliumWhiteColor4 was meant to be like this or defined */
         width: 100%;
         height: auto;
         opacity:1;
         display:block;
+        padding: 50px 20px; /* Added padding */
+        box-sizing: border-box;
     }
 
     .politicaAmbientalTitle{
-        font-size: 30px;
-   
+        font-size: var(--titleFontSize1); /* 36px */
         font-weight: var(--boldWeight);
-    
         color: var(--metaliumBlueColor2);
+        text-align: center; /* Center title */
+        margin-bottom: 30px;
     }
 
     .politicaAmbientalParagraph{
-        margin-top: 5vh;
-
-        font-size: 15px;
+        margin-top: 0; /* Grid gap will handle spacing */
+        font-size: var(--metaliumFontSize2); /* 16px base */
         line-height: var(--MetaliumLineHeight4);
-        grid-column: 1;
+        /* grid-column: 1; -- Implicit */
         color: var(--metaliumGreyColor2);
     }
 
     .politicaAmbientalGridContainer{
-        display:Grid;
-        grid-template-columns: 1fr, 1fr;
+        display:grid; /* Corrected from 'Grid' */
+        grid-template-columns: 1fr 1fr; /* Corrected comma */
+        gap: 30px; /* Added gap */
         width: 100%;
-        height: auto;
+        max-width: 1100px; /* Initial max-width for the grid */
+        margin: 0 auto; /* Center the grid */
+        align-items: center; /* Vertically align items */
     }
 
     .politicaAmbientalImg{
-        width:45vw;
+        width:100%; /* Was 45vw, now 100% of its grid cell */
+        max-width: 500px; /* Cap image size if needed */
         height: auto;
-        grid-column: 2;
+        /* grid-column: 2; -- Implicit */
+        display: block; /* For margin auto to work if max-width is hit */
+        margin: 0 auto; /* Center image in its cell if it's smaller */
     }
 
-.politicaAmbientalFooter{
-    border-radius: var(--metaliumBorderRadius5);
-    background-color:var(--metaliumBlueColor2);
-    width: 100%;
-}
+    .politicaAmbientalFooter{
+        border-radius: var(--metaliumBorderRadius5);
+        background-color:var(--metaliumBlueColor2);
+        width: 100%; /* Takes full width of .politicaAmbiental parent */
+        margin-top: 40px;
+        padding: 30px 15px; /* Padding inside the footer box */
+        box-sizing: border-box;
+    }
 
-.politicaAmbientalFooterParagraph{
-    font-size: var(--metaliumFontSize6);
-    line-height: var(--metaliumLineHeight1);
-    text-align: center;
+    .politicaAmbientalFooterParagraph{
+        font-size: var(--metaliumFontSize5); /* 22px */
+        line-height: var(--metaliumLineHeight3); /* Adjusted line height */
+        text-align: center;
+        margin: 0 auto; /* Center text block */
+        /* padding: 5vh 3vw; -- Padding applied to parent footer */
+        color: var(--whiteColor);
+        max-width: 800px; /* Cap width of text inside footer */
+    }
 
-    margin-top: 3vh;
-    padding: 5vh 3vw;
-
-    color: var(--whiteColor);
-
-}
-
-.politicaAmbientalFooterSpan{
-    font-size: var(--metaliumFontSize6);
-        
+    .politicaAmbientalFooterSpan{
+        font-size: inherit; /* Inherit from paragraph or set specifically */
+        /* font-size: var(--metaliumFontSize6); -- Original was 24px */
         color: var(--metaliumBlueColor1);
-}
-
+    }
 }
 
 @media screen and (min-width: 850px) {
     .politicaAmbientalParagraph{
-        font-size:  18px;
+        font-size:  var(--metaliumFontSize3); /* 18px */
     }
 }
-    @media screen and (min-width: 1010px) {
-        .politicaAmbientalParagraph{
-            font-size:  20px;
-        }
-
+@media screen and (min-width: 1010px) {
+    .politicaAmbientalTitle{
+        font-size: var(--titleFontSize2); /* 42px */
+    }
+    .politicaAmbientalParagraph{
+        font-size:  var(--metaliumFontSize4); /* 20px */
+    }
+    .politicaAmbientalGridContainer{
+        max-width: 1200px;
+        gap: 40px;
+    }
+    .politicaAmbientalImg{
+        max-width: 550px;
+    }
 }
 
 @media screen and (min-width: 1176px) {
     .politicaAmbientalParagraph{
-        font-size: 25px;
+        font-size: var(--metaliumFontSize5); /* 22px */
+        /* font-size: clamp(20px, 1.8vw, 25px); */
+    }
+    .politicaAmbientalFooterParagraph{
+        font-size: var(--metaliumFontSize6); /* 24px */
+        /* font-size: clamp(var(--metaliumFontSize5), 2vw, var(--metaliumFontSize6)); */
+        max-width: 900px;
+    }
+}
+
+/* New media query for very large screens */
+@media screen and (min-width: 1301px) {
+    .politicaAmbiental {
+        padding: 70px 30px;
+    }
+    .politicaAmbientalTitle {
+        font-size: var(--titleFontSize3); /* 48px */
+        /* font-size: clamp(var(--titleFontSize2), 3vw, var(--titleFontSize4)); */
+        margin-bottom: 40px;
+    }
+    .politicaAmbientalGridContainer {
+        max-width: 1400px; /* Max width for the two-column layout */
+        gap: 50px;
+    }
+    .politicaAmbientalImg{
+        max-width: 600px;
+    }
+    .politicaAmbientalParagraph {
+        font-size: var(--metaliumFontSize5); /* 22px, or use clamp */
+        /* font-size: clamp(20px, 1.5vw, 24px); */
+        line-height: 1.7;
+    }
+    .politicaAmbientalFooter {
+        margin-top: 60px;
+        padding: 40px 20px;
+    }
+    .politicaAmbientalFooterParagraph {
+        max-width: 1000px;
+        font-size: var(--metaliumFontSize6); /* 24px */
+    }
+}
+
+@media screen and (min-width: 1921px) {
+    .politicaAmbiental {
+        padding: 90px 40px;
+    }
+    .politicaAmbientalTitle {
+        font-size: var(--titleFontSize4); /* 56px */
+        margin-bottom: 50px;
+    }
+    .politicaAmbientalGridContainer {
+        max-width: 1600px; /* Further increase for very wide screens */
+        gap: 60px;
+    }
+    .politicaAmbientalImg{
+        max-width: 700px;
+    }
+    .politicaAmbientalParagraph {
+        font-size: var(--metaliumFontSize6); /* 24px */
+        /* font-size: clamp(22px, 1.2vw, 26px); */
+    }
+     .politicaAmbientalFooter {
+        margin-top: 70px;
+    }
+    .politicaAmbientalFooterParagraph {
+        max-width: 1100px;
+        font-size: var(--titleFontSize1); /* A bit large, maybe stick to metaliumFontSize6 or titleFontSize0 if smaller */
     }
 }

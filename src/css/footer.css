@@ -1,55 +1,131 @@
-@media screen and (min-width: 300px) { 
-.footer{
-    width:100vw;
-    height:auto;
-    background-color: #3d5a89;
+/* Assuming global :root variables or define specific footer variables if needed */
+:root {
+    --footerBackgroundColor: #3d5a89;
+    --footerTextColor: #ffffff;
+    --footerImgMaxWidthMobile: 80vw;
+    --footerImgMaxWidthSmallDesktop: 200px; /* Example: 20vw on 1000px screen */
+    --footerImgMaxWidthLargeDesktop: 250px;
+    --footerParagraphFontSizeMobile: 16px;
+    --footerParagraphFontSizeDesktop: 14px; /* Was 12px, slightly increased */
+    --footerParagraphMaxWidthMobile: 90vw;
+    --footerParagraphMaxWidthDesktop: 700px; /* Cap for readability */
+
+    --mainFontFamily: 'Arial', sans-serif; /* Added fallback */
+    --metaliumLineHeight4: 150%;
 }
 
-.footerImg{
-    width:80vw;
-    margin-left:10vw;
+@media screen and (min-width: 300px) {
+    .footer{
+        width:100%; /* Was 100vw */
+        height:auto;
+        background-color: var(--footerBackgroundColor);
+        padding: 20px 15px; /* Added padding */
+        box-sizing: border-box;
+        text-align: center; /* Center content on mobile */
+    }
 
+    .footerImg{
+        width: var(--footerImgMaxWidthMobile);
+        max-width: 250px; /* Cap logo size on mobile */
+        height: auto; /* Maintain aspect ratio */
+        /* margin-left:10vw; -- Centered by text-align on parent or margin auto */
+        margin: 0 auto 15px auto; /* Center and add bottom margin */
+        display: block; /* For margin auto to work */
+    }
+
+    .footerParagraph{
+        /* width: var(--footerParagraphMaxWidthMobile); -- Let text-align and padding handle */
+        width: auto;
+        max-width: 600px; /* Cap paragraph width on mobile for readability */
+        /* margin-left:5vw; -- Centered by text-align or margin auto */
+        margin: 0 auto;
+        color:var(--footerTextColor);
+        font-size: var(--footerParagraphFontSizeMobile);
+        line-height: var(--metaliumLineHeight4);
+        font-family: var(--mainFontFamily);
+    }
 }
 
-.footerParagraph{
-    width:90vw;
-    margin-left:5vw;
-    color:white;
-    font-size: 16px;
-}
+@media screen and (min-width: 601px) { /* Changed from 500px for a slightly later transition */
+    .footer{
+        display:grid;
+        grid-template-columns:auto 1fr; /* Was 1fr 3fr. 'auto' for image, 1fr for text to take remaining space */
+        /* width:100%; */ /* Already set */
+        gap: 20px; /* Add gap */
+        align-items: center; /* Vertically align items */
+        text-align: left; /* Align text left */
+        padding: 30px 40px; /* Increase padding */
+        max-width: 1200px; /* Add initial max-width for footer content */
+        margin: 0 auto; /* Center footer content */
+    }
 
-}
+    .footerImg{
+        /* width:20vw; -- Use max-width */
+        width: 100%; /* Fill its grid area up to max-width */
+        max-width: var(--footerImgMaxWidthSmallDesktop);
+        grid-column:1;
+        margin: 0; /* Reset mobile margin */
+    }
 
-@media screen and (min-width: 500px){
-.footer{
-    display:grid;
-    grid-template-columns:1fr,3fr;
-    width:100%;
-}
-
-.footerImg{
-    width:20vw;
-    grid-column:1;
-}
-
-.footerParagraph{
-    grid-column:2;
-    width:60vw;
-    font-size: 12px;
-    
-}
-
+    .footerParagraph{
+        grid-column:2;
+        /* width:60vw; -- Use max-width */
+        width: auto;
+        max-width: var(--footerParagraphMaxWidthDesktop);
+        font-size: var(--footerParagraphFontSizeDesktop);
+        margin: 0; /* Reset mobile margin */
+    }
 }
 
 @media screen and (min-width: 750px){
-    .footerParagraph{
-margin-top:5vh;
-    }
+    /* .footerParagraph{
+        margin-top:5vh; -- Use grid alignment, avoid vh for this
+    } */
 }
 @media screen and (min-width: 1050px){
-    .footerParagraph{
-margin-top:10vh;
+    /* .footerParagraph{
+        margin-top:10vh; -- Use grid alignment
+    } */
+    .footer {
+        padding: 40px 50px;
+        max-width: 1400px;
+    }
+    .footerImg {
+        max-width: calc(var(--footerImgMaxWidthSmallDesktop) + 20px); /* Slightly larger */
+    }
+    .footerParagraph {
+        font-size: calc(var(--footerParagraphFontSizeDesktop) + 1px); /* e.g. 15px */
+        max-width: 800px;
     }
 }
 
+/* New media query for larger screens */
+@media screen and (min-width: 1301px) {
+    .footer {
+        padding: 40px 60px;
+        max-width: 1600px; /* Further cap overall footer content */
+        gap: 30px;
+    }
+    .footerImg {
+        max-width: var(--footerImgMaxWidthLargeDesktop);
+    }
+    .footerParagraph {
+        font-size: calc(var(--footerParagraphFontSizeDesktop) + 2px); /* e.g. 16px */
+        line-height: 1.7;
+        max-width: 900px;
+    }
+}
 
+@media screen and (min-width: 1921px) {
+    .footer {
+        padding: 50px 80px;
+        max-width: 1800px;
+    }
+    .footerImg {
+        max-width: calc(var(--footerImgMaxWidthLargeDesktop) + 30px); /* e.g. 280px */
+    }
+    .footerParagraph {
+        font-size: calc(var(--footerParagraphFontSizeDesktop) + 3px); /* e.g. 17px, keep small for footer */
+        max-width: 1000px;
+    }
+}

@@ -1,182 +1,285 @@
 :root{
+    /* Assuming global :root variables */
     --fullWidth: 100vw;
     --metaliumMobileContainer: 90vw;
     --metaliumMobileContainer2: 95vw;
-    
+
     --normalWeight: 400;
     --normalBoldWeight: 500;
     --boldWeight: 600;
     --superBold: 700;
-    
+
     --mainFontFamily: 'Arial';
-    
+
     --titleFontSize1: 36px;
     --titleFontSize2: 42px;
     --titleFontSize3: 48px;
     --titleFontSize4: 56px;
-    --titleFontSize5: 62px;
-    
-    
+
     --metaliumFontSize1: 14px;
     --metaliumFontSize2: 16px;
-    --metaliumFontSize3: 18px
+    --metaliumFontSize3: 18px;
     --metaliumFontSize4: 20px;
     --metaliumFontSize5: 22px;
     --metaliumFontSize6: 24px;
-    
+
     --metaliumLineHeight1: 115%;
     --metaliumLineHeight3: 130%;
     --MetaliumLineHeight4: 150%;
-    
+
     --whiteColor: #ffffff;
     --metaliumWhiteColor1: #f3f3f3;
     --metaliumWhiteColor2: #EDEDED;
     --metaliumWhiteColor3: #DEE6F1;
-    
-    --metaliumGreyColor3:  #7A7A7A;
-    
-    
-    
+
     --metaliumGreyColor1: #B5B5B5;
     --metaliumGreyColor2: #656565;
     --metaliumGreyColor3:  #7A7A7A;
+
     --metaliumBlueColor1: #02A8DA;
     --metaliumBlueColor2: #0E1525;
     --metaliumBlueColor3: #173046;
-    
-    --metaliumBorder1: 3px solid #0E1525;
-    --metaliumBorder2: 1px solid #0E1525;
-    --metaliumBorder3: 1px solid #DEE6F1;
-    --metaliumBorderRadius1: 1px;
-    --metaliumBorderRadius2: 2px;
+
     --metaliumBorderRadius3: 3px;
     --metaliumBorderRadius4: 4px;
-    --metaliumBorderRadius5: 5px;
-    
-    
-    --metaliumBgBlueOpacity1: rgba(14, 21, 37, 0.8);
-    
-    --metaliumShadow1: inset 0px 2px 2px rgba(0, 0, 0, 0.25);
-    
+}
+@media screen and (min-width: 300px) {
+    .cotacaoLME{
+        display:block;
+        background-color: var(--metaliumWhiteColor1); /* Changed from GreyColor1 */
+        width: 100%; /* Was 100vw */
+        height: auto;
+        padding: 30px 15px 5vh 15px; /* Added horizontal padding, adjusted bottom */
+        box-sizing: border-box;
     }
-    @media screen and (min-width: 300px) { 
-        .cotacaoLME{
-            display:block;
-            background-color: var(--metaliumGreyColor1);
-            width: 100vw;
-            height: auto;
-            padding-bottom:8vh;
-
-        }
-.cotacaoLMETitle, .cotacaoLMEParagraph, .cotacaoLMEImg{
-width:90vw;
-margin-left:5vw;
-}
-.cotacaoLMETitle{
-    color: var(--metaliumBlueColor2);
-    font-size: 34px;
-    font-weight: bold;
-}
-.cotacaoLMEParagraph{
-    color: var(--metaliumGreyColor2);
-    font-size: 20px;
-    font-weight: 500;
-}
-.cotacaoLMEFormTitle{
-    color: var(--metaliumBlueColor2);
-    font-size:32px;
-    font-weight:bold;
-    text-align:center;
-    padding-top: 8vh;
-}
-.cotacaoLMEForm{
-    margin-left:5vw;  
-    background-color: var(--metaliumBlueColor1);
-    width: 90vw;
-    height: auto;
-}
-#nomeLME, #emailLME{
-    margin-top: 5vh;
-    width: 90vw;
-    box-sizing: border-box;
-    height: 12vh;
-    color: var(--metaliumGreyColor1);
-    font-size:22px;
-    font-weight:bold;
-}
-.cotacaoLMEBtn{
-    width:90vw;
-    background-color: var(--metaliumBlueColor3);
-    color: var(--whiteColor);
-    height:12vh;
-    text-align:center;
-    margin-top:5vh;
-    margin-bottom:5vh;
-}
-
+    .cotacaoLMETitle, .cotacaoLMEParagraph, .cotacaoLMEImg{
+        width:auto; /* Was 90vw */
+        /* margin-left:5vw; -- Handled by section padding */
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center; /* Center text and image on mobile */
     }
-
-    @media screen and (min-width: 600px) { 
-        .cotacaoLME{
-            display:grid;
-            grid-template-columns:1fr,1fr;
-            width: 100%;
-          
-
-        }
-
-        .cotacaoLMEGridContainer1{
-            grid-column:1;
-
-        }
-
-        .cotacaoLMEGridContainer2{
-            grid-column:2;
-            
-       
-        }
-
-        .cotacaoLMETitle, .cotacaoLMEParagraph, .cotacaoLMEImg{
-            width:34vw;
-            margin-left: 8vw;
-        }
-
-        
-
-       
-        .cotacaoLMEForm{
-            
-            width: 50vw;
-        }
-
-        #nomeLME::placeholder, #emailLME::placeholder{
-            color: var(--metaliumGreyColor1);
-            font-size:24px;
-            font-weight:bold;
-        }
-
-        #nomeLME, #emailLME{
-            margin-left:5vw;
-            width: 40vw;
-            height: 8vh;
-          
-        }
-.cotacaoLMEBtn{
-    width:40vw;
-    height:8vh;
-    margin-left:5vw;
-    margin-bottom: 0;
-}
+    .cotacaoLMETitle{
+        color: var(--metaliumBlueColor2);
+        font-size: var(--titleFontSize1); /* 36px, was 34px */
+        font-weight: bold;
+        margin-bottom: 15px;
     }
-
-    @media screen and (min-width: 750px) { 
-        .cotacaoLMETitle{
-            font-size: 42px;
-        }
-        .cotacaoLMEParagraph{
-            font-size: 24px;
-        }
-     .cotacaoLMEFormTitle{
-font-size:42px;
+    .cotacaoLMEParagraph{
+        color: var(--metaliumGreyColor2);
+        font-size: var(--metaliumFontSize4); /* 20px */
+        font-weight: 500;
+        line-height: var(--MetaliumLineHeight4);
+        margin-bottom: 20px;
+        max-width: 600px; /* Cap paragraph width */
+    }
+    .cotacaoLMEImg{
+        max-width: 400px; /* Cap image width */
+        height: auto;
+        display: block; /* For margin auto to work */
+    }
+    .cotacaoLMEFormTitle{
+        color: var(--metaliumBlueColor2);
+        font-size:var(--titleFontSize0, 32px); /* Was 32px, ensure titleFontSize0 is defined or adjust */
+        font-weight:bold;
+        text-align:center;
+        padding-top: 5vh; /* Reduced from 8vh */
+        margin-bottom: 20px;
+    }
+    .cotacaoLMEForm{
+        /* margin-left:5vw; -- Handled by section padding or centering form wrapper */
+        margin-left: auto;
+        margin-right: auto;
+        background-color: var(--metaliumBlueColor1);
+        width: 100%; /* Was 90vw */
+        max-width: 500px; /* Cap form width */
+        height: auto;
+        padding: 20px;
+        box-sizing: border-box;
+        border-radius: var(--metaliumBorderRadius4);
+    }
+    #nomeLME, #emailLME{
+        margin-top: 3vh; /* Reduced from 5vh */
+        width: 100%; /* Was 90vw */
+        box-sizing: border-box;
+        height: auto; /* Was 12vh, let padding define */
+        min-height: 50px;
+        padding: 12px;
+        color: var(--metaliumGreyColor3); /* Darker for better readability of typed text */
+        background-color: var(--metaliumWhiteColor1);
+        border: 1px solid var(--metaliumGreyColor1);
+        border-radius: var(--metaliumBorderRadius3);
+        font-size:var(--metaliumFontSize4); /* 20px, was 22px */
+        font-weight:normal; /* Was bold */
+    }
+     #nomeLME::placeholder, #emailLME::placeholder{
+        color: var(--metaliumGreyColor1);
+        font-weight: normal;
      }
+    .cotacaoLMEBtn{
+        width:100%; /* Was 90vw */
+        background-color: var(--metaliumBlueColor3);
+        color: var(--whiteColor);
+        height:auto; /* Was 12vh */
+        min-height: 50px;
+        padding: 12px;
+        text-align:center;
+        margin-top:3vh; /* Was 5vh */
+        margin-bottom:0; /* Was 5vh, form has padding bottom */
+        border: none;
+        border-radius: var(--metaliumBorderRadius3);
+        font-size: var(--metaliumFontSize5); /* 22px */
+        font-weight: bold;
+        cursor: pointer;
     }
+}
+
+@media screen and (min-width: 600px) {
+    .cotacaoLME{
+        display:grid;
+        grid-template-columns:1fr 1fr; /* Corrected comma */
+        width: 100%;
+        gap: 30px;
+        align-items: center;
+        padding: 50px 30px;
+        max-width: 1200px; /* Initial max-width */
+        margin: 0 auto; /* Center section */
+    }
+
+    .cotacaoLMEGridContainer1{
+        grid-column:1;
+        text-align: left; /* Align text left in this column */
+    }
+    .cotacaoLMEGridContainer2{
+        grid-column:2;
+    }
+
+    .cotacaoLMETitle, .cotacaoLMEParagraph{
+        width:auto; /* Was 34vw */
+        /* margin-left: 8vw; -- Removed */
+        margin-left: 0;
+        margin-right: 0;
+        text-align: left;
+    }
+     .cotacaoLMEImg{
+        /* width:34vw; */ /* Removed */
+        /* margin-left: 8vw; */ /* Removed */
+        margin-left: 0; /* If needs to be aligned left within its container */
+        max-width: 100%; /* Ensure it fits */
+     }
+
+    .cotacaoLMEForm{
+        width: 100%; /* Was 50vw */
+        max-width: none; /* Remove mobile cap if grid cell controls it */
+        padding: 30px;
+        margin-left: 0; /* Form aligned by grid */
+    }
+
+    #nomeLME::placeholder, #emailLME::placeholder{
+        /* color: var(--metaliumGreyColor1); */ /* Already set */
+        font-size:var(--metaliumFontSize3); /* 18px, was 24px */
+        /* font-weight:bold; */ /* Already set from input field */
+    }
+
+    #nomeLME, #emailLME{
+        /* margin-left:5vw; -- Removed */
+        margin-left: 0;
+        width: 100%; /* Was 40vw */
+        height: auto; /* Was 8vh */
+        min-height: 45px;
+        padding: 10px;
+        font-size: var(--metaliumFontSize3);
+    }
+    .cotacaoLMEBtn{
+        width:100%; /* Was 40vw */
+        height:auto; /* Was 8vh */
+        min-height: 45px;
+        padding: 10px;
+        /* margin-left:5vw; -- Removed */
+        margin-left: 0;
+        font-size: var(--metaliumFontSize4);
+    }
+    .cotacaoLMEFormTitle{
+        padding-top: 0; /* Reset */
+        font-size: var(--titleFontSize0, 28px); /* was 32px */
+    }
+}
+
+@media screen and (min-width: 750px) {
+    .cotacaoLME{
+        gap: 40px;
+    }
+    .cotacaoLMETitle{
+        font-size: var(--titleFontSize2); /* 42px */
+    }
+    .cotacaoLMEParagraph{
+        font-size: var(--metaliumFontSize5); /* 22px, was 24px */
+    }
+    .cotacaoLMEFormTitle{
+        font-size:var(--titleFontSize1); /* 36px, was 42px */
+    }
+}
+
+/* New media query for larger screens */
+@media screen and (min-width: 1301px) {
+    .cotacaoLME {
+        max-width: 1400px;
+        padding: 70px 40px;
+        gap: 50px;
+    }
+    .cotacaoLMETitle {
+        font-size: var(--titleFontSize3); /* 48px */
+    }
+    .cotacaoLMEParagraph {
+        font-size: var(--metaliumFontSize5); /* 22px */
+        line-height: 1.7;
+    }
+    .cotacaoLMEFormTitle {
+        font-size: var(--titleFontSize2); /* 42px */
+        margin-bottom: 25px;
+    }
+    #nomeLME, #emailLME {
+        min-height: 50px;
+        padding: 12px;
+        font-size: var(--metaliumFontSize4); /* 20px */
+    }
+    #nomeLME::placeholder, #emailLME::placeholder{
+        font-size:var(--metaliumFontSize4);
+    }
+    .cotacaoLMEBtn {
+        min-height: 50px;
+        padding: 12px;
+        font-size: var(--metaliumFontSize5); /* 22px */
+    }
+}
+
+@media screen and (min-width: 1921px) {
+    .cotacaoLME {
+        max-width: 1600px;
+        padding: 90px 50px;
+        gap: 60px;
+    }
+    .cotacaoLMETitle {
+        font-size: var(--titleFontSize4); /* 56px */
+    }
+    .cotacaoLMEParagraph {
+        font-size: var(--metaliumFontSize6); /* 24px */
+    }
+    .cotacaoLMEFormTitle {
+        font-size: var(--titleFontSize3); /* 48px */
+        margin-bottom: 30px;
+    }
+    #nomeLME, #emailLME {
+        min-height: 55px;
+        padding: 14px;
+        font-size: var(--metaliumFontSize5); /* 22px */
+    }
+    #nomeLME::placeholder, #emailLME::placeholder{
+        font-size:var(--metaliumFontSize5);
+    }
+    .cotacaoLMEBtn {
+        min-height: 55px;
+        padding: 14px;
+        font-size: var(--metaliumFontSize6); /* 24px */
+    }
+}

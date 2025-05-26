@@ -1,55 +1,50 @@
 :root{
-
-
-
-
+    /* Assuming global :root variables are available from other files or defined in a main CSS file */
     --fullWidth: 100vw;
     --metaliumMobileContainer: 90vw;
     --metaliumMobileContainer2: 95vw;
 
-    
-    
     --normalWeight: 400;
     --normalBoldWeight: 500;
     --boldWeight: 600;
     --superBold: 700;
-    
+
     --mainFontFamily: 'Arial';
-    
+
     --titleFontSize1: 36px;
     --titleFontSize2: 42px;
     --titleFontSize3: 48px;
     --titleFontSize4: 56px;
     --titleFontSize5: 62px;
-    
-    
+
     --metaliumFontSize1: 14px;
     --metaliumFontSize2: 16px;
-    --metaliumFontSize3: 18px
+    --metaliumFontSize3: 18px;
     --metaliumFontSize4: 20px;
     --metaliumFontSize5: 22px;
     --metaliumFontSize6: 24px;
-    
+
     --metaliumLineHeight1: 115%;
     --metaliumLineHeight3: 130%;
     --MetaliumLineHeight4: 150%;
-    
+    /* --metaliumLineHeight2: (Assuming similar to MetaliumLineHeight3 or 4 if used) */
+
+
     --whiteColor: #ffffff;
     --metaliumWhiteColor1: #f3f3f3;
     --metaliumWhiteColor2: #EDEDED;
     --metaliumWhiteColor3: #DEE6F1;
-    
-    --metaliumGreyColor3:  #7A7A7A;
-    
-    
-    
+
     --metaliumGreyColor1: #B5B5B5;
     --metaliumGreyColor2: #656565;
     --metaliumGreyColor3:  #7A7A7A;
+
     --metaliumBlueColor1: #02A8DA;
     --metaliumBlueColor2: #0E1525;
     --metaliumBlueColor3: #173046;
-    
+    /* --missionColor2: (Assuming var(--metaliumBlueColor2) or similar if used for titles) */
+
+
     --metaliumBorder1: 3px solid #0E1525;
     --metaliumBorder2: 1px solid #0E1525;
     --metaliumBorder3: 1px solid #DEE6F1;
@@ -58,104 +53,150 @@
     --metaliumBorderRadius3: 3px;
     --metaliumBorderRadius4: 4px;
     --metaliumBorderRadius5: 5px;
-    
-    
+
     --metaliumBgBlueOpacity1: rgba(14, 21, 37, 0.8);
-    
     --metaliumShadow1: inset 0px 2px 2px rgba(0, 0, 0, 0.25);
-    --widthTablet: 70vw;
-    --sustainableTextWidth: 44vw;
-    --sustainableMobilePadding: 5vw;
-    --sustainableTabletPadding: 14vw;
-    --sustainablePaddingTop: 50px;
-    --sustainableBannerMarginTop1: calc(0.7*10vw);
-    --sustainableBannerMarginTop2: calc(0.5*6vw)
-
-   
-
-}
-@media screen and (min-width: 300px) { 
-.missao{
-    width:100vw;
-    height:auto;
-    padding-top:10vh;
-    background-color: var(--whiteColor);
-    display:block;
-}
-.missaoTitle, .missaoParagraph{
-    font-family: var(--mainFontFamily);
-    font-style: normal;
-    line-height: var(--metaliumLineHeight2);
-    letter-spacing: 0.0025em;
-    text-align: center;
-}
-.missaoParagraph{
-    margin-top: 15px;
-    width:90vw;
-    font-size: 18px; 
-    font-weight: var(--normalWeight);
-    
-    
-    color: var(--metaliumGreyColor2);
-}
-.missaoTitle{
-    font-size:36px;
-}
-.missaoImg{
-    width:90vw;
-}
 }
 
-@media screen and (min-width: 600px) { 
+@media screen and (min-width: 300px) {
+    .missao{
+        width:100%; /* Was 100vw */
+        height:auto;
+        padding-top:5vh; /* Reduced from 10vh */
+        padding-bottom: 5vh;
+        background-color: var(--whiteColor);
+        display:block;
+        box-sizing: border-box;
+    }
+    .missaoTitle, .missaoParagraph{
+        font-family: var(--mainFontFamily);
+        font-style: normal;
+        line-height: var(--metaliumLineHeight3); /* Assuming --metaliumLineHeight2 was similar */
+        letter-spacing: 0.0025em;
+        text-align: center;
+        padding: 0 15px; /* Add horizontal padding */
+    }
+    .missaoParagraph{
+        margin-top: 15px;
+        width:auto; /* Was 90vw, let padding define width relative to figure */
+        max-width: 90vw; /* Ensure it doesn't exceed this on small screens if figure is wider */
+        margin-left: auto;
+        margin-right: auto;
+        font-size: var(--metaliumFontSize3); /* 18px */
+        font-weight: var(--normalWeight);
+        color: var(--metaliumGreyColor2);
+    }
+    .missaoTitle{
+        font-size:var(--titleFontSize1); /* 36px */
+        color: var(--metaliumBlueColor2); /* Assuming --missionColor2 was for title color */
+        margin-bottom: 10px;
+    }
+    .missaoImg{
+        width:100%; /* Was 90vw, now 100% of figure */
+        max-width: 200px; /* Example max-width for images on mobile */
+        height: auto;
+        display: block;
+        margin: 0 auto 15px auto; /* Center image */
+    }
+    .missaoFigure1, .missaoFigure2, .missaoFigure3 {
+        margin-bottom: 30px;
+        padding: 10px;
+    }
+    .missaoFigcaption {
+        margin-top: 10px;
+    }
+}
 
+@media screen and (min-width: 600px) {
     .missao{
         box-sizing: border-box;
         display:grid;
-        grid-template-columns: 1fr, 1fr, 1fr;
+        grid-template-columns: 1fr 1fr 1fr; /* Corrected comma */
         width: 100%;
-
-
+        gap: 20px; /* Added gap */
+        padding: 5vh 20px; /* Add horizontal padding */
+        max-width: 1200px; /* Initial max-width for the grid */
+        margin: 0 auto; /* Center grid */
     }
 
- 
+    .missaoFigure1, .missaoFigure2, .missaoFigure3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center content within figure */
+        margin-bottom: 0; /* Reset margin as grid gap handles it */
+    }
 
     .missaoParagraph{
-        width:22vw;
-        font-size: 12px; 
-        
+        width:100%; /* Was 22vw, now 100% of figcaption */
+        font-size: var(--metaliumFontSize1); /* 14px, adjusted from 12px for readability */
+        max-width: 300px; /* Cap paragraph width within each figure */
     }
-    
-.missaoTitle{
-    margin-top: 24px;
-       width:22vw; 
-    font-size: 24px;
-    font-weight: var(--superBold);
 
-    color: var(--missionColor2);
-}
+    .missaoTitle{
+        margin-top: 0; /* Was 24px */
+        width:100%; /* Was 22vw */
+        font-size: var(--metaliumFontSize6); /* 24px */
+        font-weight: var(--superBold);
+        color: var(--metaliumBlueColor2); /* Assuming --missionColor2 */
+    }
 
-.missaoImg{
-    width: 22vw;
-}
+    .missaoImg{
+        width: 100%; /* Was 22vw */
+        max-width: 150px; /* Adjust image size within figure */
+        height: auto;
+    }
 
-.missaoFigure1{
-    grid-column:1;
-}
-.missaoFigure2{
-    grid-column:2;
+    /* Figure placements are fine with grid */
 }
 
-.missaoFigure3{
-    grid-column:3;
-}
+@media screen and (min-width: 850px) {
+    .missao{
+        gap: 30px;
+        padding: 7vh 30px;
+    }
+    .missaoTitle{
+        font-size:var(--titleFontSize0, 28px); /* Assuming a slightly larger title, or adjust var */
+    }
+    .missaoParagraph{
+        font-size:var(--metaliumFontSize2); /* 16px */
+    }
+    .missaoImg{
+        max-width: 180px;
+    }
 }
 
-@media screen and (min-width: 850px) { 
-.missaoTitle{
-    font-size:32px;
+/* New media query for larger screens */
+@media screen and (min-width: 1301px) {
+    .missao {
+        max-width: 1500px;
+        gap: 40px;
+        padding: 8vh 40px;
+    }
+    .missaoTitle {
+        font-size: var(--titleFontSize1); /* 36px */
+    }
+    .missaoParagraph {
+        font-size: var(--metaliumFontSize3); /* 18px */
+        line-height: 1.6;
+    }
+    .missaoImg {
+        max-width: 200px; /* Or larger if desired */
+    }
+}
 
-}
-.missaoParagraph{
-    font-size:16px;
-}
+@media screen and (min-width: 1921px) {
+    .missao {
+        max-width: 1800px;
+        gap: 50px;
+        padding: 10vh 50px;
+    }
+    .missaoTitle {
+        font-size: var(--titleFontSize2); /* 42px */
+    }
+    .missaoParagraph {
+        font-size: var(--metaliumFontSize4); /* 20px */
+    }
+    .missaoImg {
+        max-width: 220px;
+    }
 }

@@ -1,276 +1,348 @@
 :root{
-
-
-
-
+    /* Assuming global :root variables are available */
     --fullWidth: 100vw;
     --metaliumMobileContainer: 90vw;
     --metaliumMobileContainer2: 95vw;
 
-    
-    
     --normalWeight: 400;
     --normalBoldWeight: 500;
     --boldWeight: 600;
     --superBold: 700;
-    
+
     --mainFontFamily: 'Arial';
-    
+
     --titleFontSize1: 36px;
     --titleFontSize2: 42px;
     --titleFontSize3: 48px;
     --titleFontSize4: 56px;
-    --titleFontSize5: 62px;
-    
-    
+
     --metaliumFontSize1: 14px;
     --metaliumFontSize2: 16px;
-    --metaliumFontSize3: 18px
+    --metaliumFontSize3: 18px;
     --metaliumFontSize4: 20px;
     --metaliumFontSize5: 22px;
     --metaliumFontSize6: 24px;
-    
+
     --metaliumLineHeight1: 115%;
     --metaliumLineHeight3: 130%;
     --MetaliumLineHeight4: 150%;
-    
+
     --whiteColor: #ffffff;
+    /* --colorWhite: #ffffff; -- Already defined as whiteColor */
     --metaliumWhiteColor1: #f3f3f3;
     --metaliumWhiteColor2: #EDEDED;
     --metaliumWhiteColor3: #DEE6F1;
-    
-    --metaliumGreyColor3:  #7A7A7A;
-    
-    
-    
+
     --metaliumGreyColor1: #B5B5B5;
     --metaliumGreyColor2: #656565;
     --metaliumGreyColor3:  #7A7A7A;
+
     --metaliumBlueColor1: #02A8DA;
     --metaliumBlueColor2: #0E1525;
     --metaliumBlueColor3: #173046;
-    
-    --metaliumBorder1: 3px solid #0E1525;
-    --metaliumBorder2: 1px solid #0E1525;
-    --metaliumBorder3: 1px solid #DEE6F1;
-    --metaliumBorderRadius1: 1px;
-    --metaliumBorderRadius2: 2px;
+
     --metaliumBorderRadius3: 3px;
     --metaliumBorderRadius4: 4px;
     --metaliumBorderRadius5: 5px;
-    
-    
-    --metaliumBgBlueOpacity1: rgba(14, 21, 37, 0.8);
-    
-    --metaliumShadow1: inset 0px 2px 2px rgba(0, 0, 0, 0.25);
-    --widthTablet: 70vw;
-    --sustainableTextWidth: 44vw;
-    --sustainableMobilePadding: 5vw;
-    --sustainableTabletPadding: 14vw;
-    --sustainablePaddingTop: 50px;
-    --sustainableBannerMarginTop1: calc(0.7*10vw);
-    --sustainableBannerMarginTop2: calc(0.5*6vw)
-
-    --solutionMobilePadding1: 5vw;
-
-	--colorWhite: #ffffff;
-	--solutionColor1: #B5B5B5;
-	--solutionColor2: #0E1525;
-	--solutionColor3:  #02A8DA;
-	--solutionBgOpacity: rgba(14,21,37,0.8);
-
 }
+
 @media screen and (min-width: 300px){
-.contato{
-    width:100vw;
-    height:auto;
-    background-color: var(--metaliumWhiteColor2);
+    .contato{
+        width:100%; /* Was 100vw */
+        height:auto;
+        background-color: var(--metaliumWhiteColor2);
+        padding: 30px 15px;
+        box-sizing: border-box;
+    }
+    .contatoInput, .contatoInputMsg { /* Combined common styles */
+        width:100%; /* Was 35vw / 80vw */
+        max-width: 500px; /* Cap width on mobile */
+        display: block; /* For auto margins */
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:3vh; /* Reduced from 5vh */
+        background-color:var(--metaliumWhiteColor3);
+        color: var(--metaliumGreyColor3);
+        font-size:var(--metaliumFontSize3); /* 18px, was 20px */
+        padding: 12px;
+        box-sizing: border-box;
+        border: 1px solid var(--metaliumGreyColor1);
+        border-radius: var(--metaliumBorderRadius3);
+    }
+    .contatoInput{
+        height: auto; /* Was 8vh */
+        min-height: 50px;
+    }
+    .contatoInputMsg{
+        height:auto; /* Was 22vh */
+        min-height: 120px; /* Example min-height for textarea */
+    }
 
+    .contatoBtn{
+        margin-top:3vh; /* Reduced from 5vh */
+        width:100%; /* Was 80vw */
+        max-width: 500px; /* Cap width */
+        display: block; /* For auto margins */
+        margin-left: auto;
+        margin-right: auto;
+        background-color: var(--metaliumBlueColor3);
+        color: var(--whiteColor);
+        /* border: 3px solid  var(--metaliumGreyColor2); -- Seems heavy, adjusted */
+        border: none;
+        border-radius:var(--metaliumBorderRadius5);
+        height:auto; /* Was 10vh */
+        min-height: 50px;
+        padding: 12px;
+        font-size: var(--metaliumFontSize4); /* 20px */
+        font-weight: var(--boldWeight);
+        cursor: pointer;
+        text-align: center;
+    }
+    .contatoTitle{
+        /* margin-left:5vw; -- Centered */
+        margin-left: auto;
+        margin-right: auto;
+        font-size: var(--titleFontSize1);
+        line-height: var(--metaliumLineHeight1);
+        text-align:center;
+        color: var(--metaliumBlueColor3);
+        margin-bottom: 10px;
+    }
+
+    .contatoParagraph{
+        font-size: var(--metaliumFontSize4); /* 20px */
+        color: var(--metaliumGreyColor2); /* Was black */
+        /* width:90vw; -- Centered */
+        width: auto;
+        max-width: 600px;
+        margin-left:auto;
+        margin-right: auto;
+        text-align:center;
+        margin-bottom: 25px;
+        line-height: var(--MetaliumLineHeight4);
+    }
+    .contatoAside{
+        width:0.0001px;
+        height:0.00001px;
+        display:none;
+        opacity:0;
+    }
+    .contatoInputMsg::placeholder, .contatoInput::placeholder {
+        color: var(--metaliumGreyColor3);
+        font-size:var(--metaliumFontSize3); /* 18px */
+        font-weight:normal; /* Was 600 */
+    }
 }
-.contatoInput{
-    width:35vw;
-    height:8vh;
-    margin-top:5vh;
-    margin-left:8vw;
-    background-color:var(--metaliumWhiteColor3);
-    color: var(--metaliumGreyColor3);
-    font-size:20px;
-}
-.contatoInputMsg{
-width:80vw;
-margin-left:8vw;
-background-color:var(--metaliumWhiteColor3);
-color: var(--metaliumGreyColor3);
-font-size:20px;
-height:22vh;
-margin-top:5vh;
-}
 
-.contatoBtn{
-    margin-top:5vh;
-    width:80vw;
-    margin-left:8vw;
-    background-color: var(--metaliumBlueColor3);
-    color: var(--colorWhite);
-    border: 3px solid  var(--metaliumGreyColor2);
-    border-radius:5px;
-    height:10vh;
+@media screen and (min-width: 769px) { /* Changed from 600px for a better split point */
+    .contato{
+        width:100%;
+        display:grid;
+        grid-template-columns:2fr 1fr; /* Was 3fr,1fr - give more space to form */
+        padding: 0; /* Remove section padding, aside will have its own */
+        max-width: 1600px; /* Overall max-width for contact section */
+        margin: 0 auto; /* Center it */
+        background-color: var(--metaliumWhiteColor2); /* Ensure bg is set */
+    }
 
-}
-.contatoTitle{
-   
-    margin-left:5vw;
-    font-size: var(--titleFontSize1);
-    line-height: var(--metaliumLineHeight1);
-    text-align:center;
-    color: var(--metaliumBlueColor3);
-
-}
-
-.contatoParagraph{
-    font-size: 20px;
-    color: black;
-    width:90vw;
-    margin-left:5vw;
-    text-align:center;
-}
-.contatoAside{
-    width:0.0001px;
-    height:0.00001px;
-    display:none;
-    opacity:0;
-    
-}
-}
-@media screen and (min-width: 600px) { 
-
-.contato{
-    width:100%;
-    display:grid;
-    grid-template-columns:3fr,1fr;
-
-}
-
-
-
-    .contatoContainer{
+    .contatoContainer{ /* Wraps form and its title/paragraph */
         grid-column:1;
+        padding: 50px 40px; /* Add padding here */
+        box-sizing: border-box;
+    }
+    .contatoForm {
+        max-width: 700px; /* Cap form width */
+        margin: 0 auto; /* Center form if .contatoContainer is wider */
     }
 
     .contatoAside{
         grid-column:2;
-        width: 25vw;
-        display:block;
+        width: 100%; /* Was 25vw, now takes its grid column space */
+        display:flex; /* Use flex for better control */
+        flex-direction: column;
+        /* justify-content: center; */ /* Vertically center content */
+        align-items: center; /* Horizontally center text content */
         opacity:1;
-        height:auto;
+        height:100%; /* Make aside full height of grid row */
+        min-height: 100vh; /* Ensure it has some min height */
         background-color:var(--metaliumBlueColor3);
+        padding: 40px 20px;
+        box-sizing: border-box;
     }
-.contatoAsideTitle, .contatoAsideParagraph{
-    text-align:center;   
-    color:white;
-}
-.contatoAsideImgContainer{
-    display: inline;
-}
+    .contatoAsideTitle, .contatoAsideParagraph{
+        text-align:center;
+        color:var(--whiteColor);
+        width: 100%; /* Take full width of aside padding box */
+        max-width: 300px; /* Cap width of text inside aside */
+    }
+    .contatoAsideImgContainer{
+        display: flex; /* Changed from inline */
+        justify-content: center;
+        gap: 20px; /* Space between icons */
+        margin-top: 30px; /* Was 12vh */
+    }
 
-.contatoAsideImg{
-    width: 4vw;
-    margin-left: 6vw;
-    cursor:pointer;
-    margin-top: 12vh;
-}
-.contatoAsideTitle{
-    margin-top:5vh;
-    font-size:28px;
-    text-align:center;
-    width:30vw;
-}
+    .contatoAsideImg{
+        width: 40px; /* Was 4vw */
+        height: 40px;
+        /* margin-left: 6vw; -- Handled by gap */
+        margin-left: 0;
+        cursor:pointer;
+        margin-top: 0; /* Reset */
+    }
+    .contatoAsideTitle{
+        margin-top:0; /* Was 5vh */
+        font-size:var(--titleFontSize0, 28px); /* Was 28px, ensure var exists or use px */
+        /* width:30vw; -- Removed */
+        margin-bottom: 20px;
+    }
 
-.contatoAsideParagraph{
-    font-size:12px;
-}
+    .contatoAsideParagraph{
+        font-size:var(--metaliumFontSize2); /* 16px, was 12px */
+        line-height: 1.6;
+        margin-bottom: 10px;
+    }
     .contatoInput{
-        width: 60vw;
-        margin-top:5vh;
-        height:8vh;
-        margin-left:5vw;
-        font-size:20px;
-        background-color: var(--metaliumWhiteColor3);
-        color: var(--metaliumGreyColor3);
-        border:3px solid var(--metaliumGreyColor1);
-        border-radius:5px;
+        width: 100%; /* Was 60vw */
+        /* margin-top:5vh; */
+        /* height:8vh; */
+        /* margin-left:5vw; -- Handled by form max-width and padding */
+        margin-left: 0;
+        font-size:var(--metaliumFontSize3); /* 18px, was 20px */
+        /* background-color: var(--metaliumWhiteColor3); */
+        /* color: var(--metaliumGreyColor3); */
+        /* border:3px solid var(--metaliumGreyColor1); -- Too thick */
+        border:1px solid var(--metaliumGreyColor1);
+        /* border-radius:5px; */
     }
     .contatoInputMsg{
-        margin-left:5vw;
+        /* margin-left:5vw; */
+        margin-left: 0;
+        width:100%; /* Was 60vw */
+        min-height: 150px; /* Was 30vh */
     }
 
     .contatoBtn{
-        width:60vw;
-        background-color: var(--metaliumBlueColor3);
-        color: var(--colorWhite);
-        height: 8vh;
-        margin-top:5vh;
-        margin-left:5vw;
-        cursor: pointer;
+        width:100%; /* Was 60vw */
+        /* height: 8vh; */
+        /* margin-left:5vw; */
+        margin-left: 0;
     }
 
-    .contatoInputMsg{
-        margin-top:5vh;
-        font-size:20px;
-        font-weight:600;
-        width:60vw;
-        height:30vh;
-        border:3px solid var(--metaliumGreyColor1);
-        border-radius:5px;
-        background-color: var(--metaliumWhiteColor3);
-        color: var(--metaliumGreyColor3);
+    .contatoTitle, .contatoParagraph{
+        /* margin-left:5vw; */
+        margin-left: 0; /* Text align left within .contatoContainer */
+        /* width:40vw; -- Let container and max-width handle it */
+        width: auto;
+        text-align:left;
+        max-width: none; /* Remove mobile cap */
     }
-
-    .contatoInputMsg::placeholder, .contatoInput::placeholder {
-        color: var(--metaliumGreyColor3);
-        font-size:20px;
-        font-weight:600;
+    .contatoTitle {
+        text-align: center; /* Or left, depends on design intent for the form section */
+        margin-bottom: 15px;
     }
-
-   .contatoTitle, .contatoParagraph{
-    margin-left:5vw;
-    width:40vw;
-    text-align:left;
-   } 
-
+    .contatoParagraph{
+        text-align: center; /* Or left */
+        margin-bottom: 30px;
+    }
 }
 
-@media screen and (min-width: 680px) { 
-.contatoAsideTitle{
-    font-size: 32px;
-}
-
-.contatoAsideParagraph{
-    font-size:14px;
-}
-
-}
-
-@media screen and (min-width: 820px) { 
+@media screen and (min-width: 930px) { /* Adjusted from 680, 820, 930px */
     .contatoAsideTitle{
-        font-size: 36px;
+        font-size: var(--titleFontSize1); /* 36px, was scaling up to 40px */
     }
-    
     .contatoAsideParagraph{
-        font-size:16px;
+        font-size:var(--metaliumFontSize3); /* 18px */
     }
-
-
+    .contatoContainer {
+        padding: 60px 50px;
+    }
 }
 
-@media screen and (min-width:930px) { 
-    .contatoAsideTitle{
-        font-size: 40px;
+/* New media query for larger screens */
+@media screen and (min-width: 1301px) {
+    .contato {
+        max-width: 1800px; /* Increase overall max-width */
+        grid-template-columns: 2.5fr 1fr; /* Adjust column ratio if needed */
     }
-    
-    .contatoAsideParagraph{
-        font-size:18px;
+    .contatoContainer {
+        padding: 70px 60px;
     }
+    .contatoForm {
+        max-width: 800px;
+    }
+    .contatoTitle {
+        font-size: var(--titleFontSize2); /* 42px */
+    }
+    .contatoParagraph {
+        font-size: var(--metaliumFontSize5); /* 22px */
+    }
+    .contatoInput, .contatoInputMsg {
+        font-size: var(--metaliumFontSize4); /* 20px */
+        padding: 14px;
+    }
+    .contatoInputMsg {
+        min-height: 180px;
+    }
+    .contatoBtn {
+        font-size: var(--metaliumFontSize5); /* 22px */
+        padding: 14px;
+        min-height: 55px;
+    }
+    .contatoAside {
+        padding: 50px 30px;
+    }
+    .contatoAsideTitle {
+        font-size: var(--titleFontSize2); /* 42px */
+    }
+    .contatoAsideParagraph {
+        font-size: var(--metaliumFontSize4); /* 20px */
+    }
+    .contatoAsideImg {
+        width: 45px;
+        height: 45px;
+    }
+}
 
-
+@media screen and (min-width: 1921px) {
+    .contato {
+        max-width: 2000px; /* Further increase */
+    }
+    .contatoContainer {
+        padding: 80px 70px;
+    }
+    .contatoForm {
+        max-width: 900px;
+    }
+    .contatoTitle {
+        font-size: var(--titleFontSize3); /* 48px */
+    }
+    .contatoParagraph {
+        font-size: var(--metaliumFontSize6); /* 24px */
+    }
+    .contatoInput, .contatoInputMsg {
+        font-size: var(--metaliumFontSize5); /* 22px */
+        padding: 16px;
+    }
+    .contatoInputMsg {
+        min-height: 200px;
+    }
+    .contatoBtn {
+        font-size: var(--metaliumFontSize6); /* 24px */
+        padding: 16px;
+        min-height: 60px;
+    }
+    .contatoAside {
+        padding: 60px 40px;
+    }
+    .contatoAsideTitle {
+        font-size: var(--titleFontSize3); /* 48px */
+    }
+    .contatoAsideParagraph {
+        font-size: var(--metaliumFontSize5); /* 22px */
+    }
+    .contatoAsideImg {
+        width: 50px;
+        height: 50px;
+    }
 }

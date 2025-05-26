@@ -1,217 +1,186 @@
 :root{
-
-
-
-
+    /* Assuming global :root variables */
     --fullWidth: 100vw;
-    --metaliumMobileContainer: 90vw;
-    --metaliumMobileContainer2: 95vw;
-
-    
-    
     --normalWeight: 400;
-    --normalBoldWeight: 500;
     --boldWeight: 600;
     --superBold: 700;
-    
     --mainFontFamily: 'Arial';
-    
+
     --titleFontSize1: 36px;
     --titleFontSize2: 42px;
     --titleFontSize3: 48px;
     --titleFontSize4: 56px;
-    --titleFontSize5: 62px;
-    
-    
-    --metaliumFontSize1: 14px;
-    --metaliumFontSize2: 16px;
-    --metaliumFontSize3: 18px
+
     --metaliumFontSize4: 20px;
     --metaliumFontSize5: 22px;
     --metaliumFontSize6: 24px;
-    
-    --metaliumLineHeight1: 115%;
-    --metaliumLineHeight3: 130%;
+
     --MetaliumLineHeight4: 150%;
-    
+
     --whiteColor: #ffffff;
     --metaliumWhiteColor1: #f3f3f3;
-    --metaliumWhiteColor2: #EDEDED;
-    --metaliumWhiteColor3: #DEE6F1;
-    
-    --metaliumGreyColor3:  #7A7A7A;
-    
-    
-    
-    --metaliumGreyColor1: #B5B5B5;
     --metaliumGreyColor2: #656565;
-    --metaliumGreyColor3:  #7A7A7A;
     --metaliumBlueColor1: #02A8DA;
-    --metaliumBlueColor2: #0E1525;
     --metaliumBlueColor3: #173046;
-    
-    --metaliumBorder1: 3px solid #0E1525;
-    --metaliumBorder2: 1px solid #0E1525;
-    --metaliumBorder3: 1px solid #DEE6F1;
-    --metaliumBorderRadius1: 1px;
-    --metaliumBorderRadius2: 2px;
+
     --metaliumBorderRadius3: 3px;
-    --metaliumBorderRadius4: 4px;
-    --metaliumBorderRadius5: 5px;
-    
-    
-    --metaliumBgBlueOpacity1: rgba(14, 21, 37, 0.8);
-    
-    --metaliumShadow1: inset 0px 2px 2px rgba(0, 0, 0, 0.25);
-    --widthTablet: 70vw;
-    --sustainableTextWidth: 44vw;
-    --sustainableMobilePadding: 5vw;
-    --sustainableTabletPadding: 14vw;
-    --sustainablePaddingTop: 50px;
-    --sustainableBannerMarginTop1: calc(0.7*10vw);
-    --sustainableBannerMarginTop2: calc(0.5*6vw)
-
-    --solutionMobilePadding1: 5vw;
-
-	--colorWhite: #ffffff;
-	--solutionColor1: #B5B5B5;
-	--solutionColor2: #0E1525;
-	--solutionColor3:  #02A8DA;
-	--solutionBgOpacity: rgba(14,21,37,0.8);
-
+    --metaliumShadow1: 0 4px 8px rgba(0,0,0,0.1); /* Example shadow */
 }
 
-@media screen and (min-width: 320px) { 
+@media screen and (min-width: 320px) {
     .locacao{
-     
         width: 100%;
         height:auto;
         background-color: var(--metaliumWhiteColor1);
         box-sizing: border-box;
-       
+        padding: 30px 15px;
     }
 
     .locacaoImg{
-        width: 80%;
-        margin-left: 10%;
-        
+        width: 100%; /* Was 80% with margin */
+        /* margin-left: 10%; -- Removed */
+        height: auto;
+        display: block;
+        border-top-left-radius: var(--metaliumBorderRadius3);
+        border-top-right-radius: var(--metaliumBorderRadius3);
     }
 
-
-.locacaoTitle{
-    font-family: var(--mainFontFamily);
-    font-style: normal;
-    text-align: center;
-    font-size: var(--titleFontSize2);
+    .locacaoTitle{
+        font-family: var(--mainFontFamily);
+        font-style: normal;
+        text-align: center;
+        font-size: var(--titleFontSize1); /* 36px, was titleFontSize2 (42px) which is large for 320px */
 		font-weight: var(--superBold);
-		
 		color: var(--metaliumBlueColor3);
-}
+        margin-bottom: 15px;
+    }
 
-.locacaoParagraph{
-    font-family: var(--mainFontFamily);
-    font-style: normal;
-    text-align: center;
-    font-size: 20px;
-		line-height: 150%;
-		font-weight: var(--boldWeight);
-		
+    .locacaoParagraph{
+        font-family: var(--mainFontFamily);
+        font-style: normal;
+        text-align: center;
+        font-size: var(--metaliumFontSize4); /* 20px */
+		line-height: var(--MetaliumLineHeight4);
+		font-weight: var(--normalWeight); /* Was boldWeight */
 		color: var(--metaliumGreyColor2);
-}
-
-.locacaoFigcaption{
-    height: 60px;
-    background-color: var(--metaliumBlueColor1);
-    font-size: 22px;
-    text-align: center;
-    padding-top: 12px;
-    line-height: 28px;
-    font-weight: var(--superBold);
-    box-sizing: border-box;
-    color: var(--whiteColor);
-    width:80%;
-    margin-left: 10%;
-}
-}
-
-@media screen and (min-width: 550px) { 
-.locacaoGridContainer{
-display:grid;
-grid-template-columns: 1fr, 1fr;
-grid-template-rows:1fr, 1fr,1fr;
-
-}
-
-
-
-    .locacaoFigure1{
-        grid-column:1;
-        grid-row:1;
+        margin-bottom: 30px;
+        max-width: 700px; /* Cap paragraph width */
+        margin-left: auto;
+        margin-right: auto;
     }
-
-    
-    .locacaoFigure2{
-        grid-column:2;
-        grid-row:1;
-    }
-
-    .locacaoFigure3{
-        grid-column:1;
-        grid-row:2;
-    }
-    .locacaoFigure4{
-          grid-column:2;
-        grid-row:2;
-    }
-    .locacaoFigure5{
-        grid-column:1;
-        grid-row:3;
-    }
-    .locacaoFigure6{
-        grid-column:2;
-     grid-row:3;
-    }
-
-  
 
     .locacaoFigcaption{
-        height: 80px;
+        /* height: 60px; -- Let padding define */
+        background-color: var(--metaliumBlueColor1);
+        font-size: var(--metaliumFontSize5); /* 22px */
+        text-align: center;
+        padding: 12px 10px; /* Was padding-top: 12px */
+        line-height: 1.3; /* Was 28px fixed */
+        font-weight: var(--superBold);
+        box-sizing: border-box;
+        color: var(--whiteColor);
+        width:100%; /* Was 80% with margin */
+        /* margin-left: 10%; -- Removed */
+        border-bottom-left-radius: var(--metaliumBorderRadius3);
+        border-bottom-right-radius: var(--metaliumBorderRadius3);
     }
-    
+    .locacaoFigure1, .locacaoFigure2, .locacaoFigure3, .locacaoFigure4, .locacaoFigure5, .locacaoFigure6 {
+        width: 80%; /* Figures themselves can be 80% on mobile */
+        max-width: 350px; /* Cap figure width */
+        margin: 0 auto 25px auto; /* Center figures */
+        box-shadow: var(--metaliumShadow1);
+        border-radius: var(--metaliumBorderRadius3);
+        overflow: hidden; /* Ensures image respects border radius */
+    }
+    .locacaoGridContainer{
+        display: block; /* Mobile is block layout for figures */
+    }
 }
 
-@media screen and (min-width: 750px) { 
-.locacaoGridContainer{
-    grid-template-columns:1fr,1fr,1fr;
-    grid-template-rows:1fr,1fr;
+@media screen and (min-width: 550px) {
+    .locacaoGridContainer{
+        display:grid;
+        grid-template-columns: 1fr 1fr; /* Corrected comma */
+        grid-template-rows:auto auto auto; /* Was 1fr, use auto */
+        gap: 20px;
+        max-width: 800px; /* Initial max width for grid */
+        margin: 0 auto; /* Center grid */
+    }
+    .locacaoFigure1, .locacaoFigure2, .locacaoFigure3, .locacaoFigure4, .locacaoFigure5, .locacaoFigure6 {
+        width: 100%; /* Figures take full grid cell width */
+        max-width: none; /* Remove mobile max-width */
+        margin: 0; /* Reset mobile margin */
+    }
+    /* .locacaoFigcaption{
+        height: 80px; -- Let padding define
+    } */
+    .locacaoTitle{
+        font-size: var(--titleFontSize2); /* 42px */
+    }
 }
 
-.locacaoFigure1{
-    grid-column:1;
-    grid-row:1;
+@media screen and (min-width: 750px) {
+    .locacaoGridContainer{
+        grid-template-columns:1fr 1fr 1fr; /* Corrected comma */
+        grid-template-rows:auto auto; /* Was 1fr, use auto */
+        gap: 25px;
+        max-width: 1200px;
+    }
+    .locacaoParagraph{
+        font-size: var(--metaliumFontSize5); /* 22px */
+    }
+    .locacaoFigcaption{
+        font-size: var(--metaliumFontSize5); /* 22px */
+        padding: 15px 10px;
+    }
 }
 
-
-.locacaoFigure2{
-    grid-column:2;
-    grid-row:1;
+/* New media query for larger screens */
+@media screen and (min-width: 1301px) {
+    .locacao {
+        padding: 50px 30px;
+    }
+    .locacaoTitle {
+        font-size: var(--titleFontSize3); /* 48px */
+        margin-bottom: 20px;
+    }
+    .locacaoParagraph {
+        font-size: var(--metaliumFontSize5); /* 22px */
+        max-width: 900px;
+        margin-bottom: 40px;
+    }
+    .locacaoGridContainer {
+        max-width: 1500px; /* Max width for the grid */
+        gap: 30px;
+        /* Consider if 4 columns would be better here: grid-template-columns: repeat(4, 1fr); */
+    }
+    .locacaoFigcaption {
+        font-size: var(--metaliumFontSize5); /* 22px */
+        padding: 18px 10px;
+    }
 }
 
-.locacaoFigure3{
-    grid-column:3;
-    grid-row:1;
-}
-.locacaoFigure4{
-      grid-column:1;
-    grid-row:2;
-}
-.locacaoFigure5{
-    grid-column:2;
-    grid-row:2;
-}
-.locacaoFigure6{
-    grid-column:3;
- grid-row:2;
-
-}
+@media screen and (min-width: 1921px) {
+    .locacao {
+        padding: 70px 40px;
+    }
+    .locacaoTitle {
+        font-size: var(--titleFontSize4); /* 56px */
+        margin-bottom: 25px;
+    }
+    .locacaoParagraph {
+        font-size: var(--metaliumFontSize6); /* 24px */
+        max-width: 1000px;
+        margin-bottom: 50px;
+    }
+    .locacaoGridContainer {
+        max-width: 1800px; /* Or even wider if the design supports it, consider more columns */
+        /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
+        /* grid-template-columns: repeat(4, 1fr); */
+        gap: 40px;
+    }
+    .locacaoFigcaption {
+        font-size: var(--metaliumFontSize6); /* 24px */
+        padding: 20px 10px;
+    }
 }

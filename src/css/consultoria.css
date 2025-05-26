@@ -1,220 +1,245 @@
 :root{
-
-
-
-
+    /* Assuming global :root variables or define them here */
     --fullWidth: 100vw;
-    --metaliumMobileContainer: 90vw;
-    --metaliumMobileContainer2: 95vw;
-
-    
-    
     --normalWeight: 400;
-    --normalBoldWeight: 500;
-    --boldWeight: 600;
     --superBold: 700;
-    
     --mainFontFamily: 'Arial';
-    
+
     --titleFontSize1: 36px;
     --titleFontSize2: 42px;
-    --titleFontSize3: 48px;
-    --titleFontSize4: 56px;
-    --titleFontSize5: 62px;
-    
-    
-    --metaliumFontSize1: 14px;
     --metaliumFontSize2: 16px;
-    --metaliumFontSize3: 18px
+    --metaliumFontSize3: 18px;
     --metaliumFontSize4: 20px;
     --metaliumFontSize5: 22px;
-    --metaliumFontSize6: 24px;
-    
-    --metaliumLineHeight1: 115%;
+
+
     --metaliumLineHeight3: 130%;
     --MetaliumLineHeight4: 150%;
-    
+
     --whiteColor: #ffffff;
+    /* --colorWhite: #ffffff; -- Duplicate of whiteColor */
     --metaliumWhiteColor1: #f3f3f3;
-    --metaliumWhiteColor2: #EDEDED;
-    --metaliumWhiteColor3: #DEE6F1;
-    
-    --metaliumGreyColor3:  #7A7A7A;
-    
-    
-    
-    --metaliumGreyColor1: #B5B5B5;
-    --metaliumGreyColor2: #656565;
-    --metaliumGreyColor3:  #7A7A7A;
     --metaliumBlueColor1: #02A8DA;
     --metaliumBlueColor2: #0E1525;
-    --metaliumBlueColor3: #173046;
-    
-    --metaliumBorder1: 3px solid #0E1525;
-    --metaliumBorder2: 1px solid #0E1525;
+
+
     --metaliumBorder3: 1px solid #DEE6F1;
-    --metaliumBorderRadius1: 1px;
-    --metaliumBorderRadius2: 2px;
     --metaliumBorderRadius3: 3px;
-    --metaliumBorderRadius4: 4px;
-    --metaliumBorderRadius5: 5px;
-    
-    
-    --metaliumBgBlueOpacity1: rgba(14, 21, 37, 0.8);
-    
-    --metaliumShadow1: inset 0px 2px 2px rgba(0, 0, 0, 0.25);
-    --widthTablet: 70vw;
-    --sustainableTextWidth: 44vw;
-    --sustainableMobilePadding: 5vw;
-    --sustainableTabletPadding: 14vw;
-    --sustainablePaddingTop: 50px;
-    --sustainableBannerMarginTop1: calc(0.7*10vw);
-    --sustainableBannerMarginTop2: calc(0.5*6vw)
 
-    --solutionMobilePadding1: 5vw;
-
-	--colorWhite: #ffffff;
-	--solutionColor1: #B5B5B5;
-	--solutionColor2: #0E1525;
-	--solutionColor3:  #02A8DA;
-	--solutionBgOpacity: rgba(14,21,37,0.8);
-
+    /* Specific to this file, good practice */
+    --solutionColor1: #B5B5B5; /* Used as background */
+	--solutionColor2: #0E1525; /* Could be text color */
+	--solutionColor3:  #02A8DA; /* Button background */
+	/* --solutionBgOpacity: rgba(14,21,37,0.8); -- Not currently used */
 }
-@media screen and (min-width: 300px) { 
-.consultoria{
-    width: 0.0001px;
-    height:0.00001px;
-    display:none;
-    opacity:0;
-}
+@media screen and (min-width: 300px) {
+    .consultoria{
+        width: 0.0001px; /* Effectively hidden */
+        height:0.00001px;
+        display:none;
+        opacity:0;
+    }
 }
 
-@media screen and (min-width: 700px) { 
+@media screen and (min-width: 700px) {
+    .consultoria{
+        /* padding-left: 5vw; -- Use padding on all sides */
+        /* padding-top:5vw; */
+        padding: 5vw;
+        display:grid;
+        height:auto;
+        width: 100%;
+        box-sizing:border-box;
+        opacity:1;
+        grid-template-columns:1fr 1fr; /* Corrected comma */
+        grid-template-rows: auto auto; /* Was 1fr,1fr - auto is better for content height */
+        gap: 30px; /* Add gap */
+        align-items: center; /* Align items vertically */
+        background-color:var(--solutionColor1);
+        max-width: 1200px; /* Add initial max-width */
+        margin: 0 auto; /* Center section */
+    }
 
-.consultoria{
-    padding-left: 5vw;
-    padding-top:5vw;
-    display:grid;
-    height:auto;
-    width: 100%;
-    box-sizing:border-box;
-    opacity:1;
-    grid-template-columns:1fr,1fr;
-    grid-template-rows: 1fr,1fr;
-    background-color:var(--solutionColor1);
-}
-
-.consultoriaBtn{
+    .consultoriaBtn{
         font-family: var(--mainFontFamily);
-         font-style: normal;
+        font-style: normal;
         font-weight: var(--superBold);
-        width: 22vw;
-		height: 20px;
-        margin-left: 6.5vw;
-		
-		font-size: var(--metaliumFontSize2);
-		
-		margin-top: 4vw;
+        /* width: 22vw; -- Use max-width */
+        width: auto;
+        max-width: 250px;
+		height: auto; /* Was 20px, let padding define */
+        padding: 10px 20px;
+        /* margin-left: 6.5vw; -- Adjust for centering or left alignment */
+        margin-left: 0; /* Align to left of text area */
+		font-size: var(--metaliumFontSize2); /* 16px */
+		margin-top: 20px; /* Was 4vw */
 		border : 0;
 		border-radius: var(--metaliumBorderRadius3);
-		justify-content: center;
-		align-items: center;
-		gap: 25px;
+		/* justify-content: center; -- Button is block or inline-block */
+		/* align-items: center; */
+		/* gap: 25px; -- Not applicable to button itself */
 		background: var(--solutionColor3);
-		color: var(--colorWhite);
+		color: var(--whiteColor);
 		cursor: pointer;
-}
-
-
-.consultoriaParagraph{
-    font-family: var(--mainFontFamily);
-		font-style: normal;
-		font-weight: var(--superBold);
+        display: inline-block; /* To respect padding and text-align of parent if needed */
         text-align: center;
-		font-size: 10px;
-		line-height: 150%;
-		color: var(--colorWhite);
-}
+    }
 
-.consultoriaTitle{
-    color: var(--colorWhite);
-    font-size: 22px;
- 	line-height: 100%;
-	text-align: center;
-}
 
-.consultoriaImg1{
-grid-column:2;
-grid-row:1;
-width: 35vw;
-}
+    .consultoriaParagraph{
+        font-family: var(--mainFontFamily);
+		font-style: normal;
+		font-weight: var(--normalWeight); /* Changed from superBold for readability */
+        text-align: left; /* Changed from center */
+		font-size: var(--metaliumFontSize2); /* 16px, was 10px */
+		line-height: var(--MetaliumLineHeight4); /* 150% */
+		color: var(--metaliumBlueColor2); /* Changed from whiteColor for contrast on light gray bg */
+        margin-bottom: 15px;
+    }
 
-.consultoriaImg2{
-    grid-column:1;
-    grid-row:2;
-    width:35vw;
-    padding-top: 12vh;
+    .consultoriaTitle{
+        color: var(--metaliumBlueColor2); /* Changed from whiteColor */
+        font-size: var(--titleFontSize1); /* 36px, was 22px */
+ 	    line-height: 1.2; /* Was 100% */
+	    text-align: left; /* Changed from center */
+        margin-bottom: 15px;
+        font-weight: var(--superBold);
+    }
+
+    .consultoriaImg1, .consultoriaImg2{
+        width: 100%; /* Was 35vw */
+        max-width: 400px; /* Cap image size */
+        height: auto;
+        display: block;
+        margin: 0 auto; /* Center image in its cell */
+        border-radius: var(--metaliumBorderRadius3);
+    }
+
+    .consultoriaImg1{
+        grid-column:2;
+        grid-row:1;
+    }
+
+    .consultoriaImg2{
+        grid-column:1;
+        grid-row:2;
+        /* padding-top: 12vh; -- Remove, rely on grid gap and alignment */
     }
 
     .consultoriaTextArea1, .consultoriaTextArea2{
-        border: var(--metaliumBorder3);
+        /* border: var(--metaliumBorder3); -- Optional, can look cleaner without on colored bg */
 		border-radius: var(--metaliumBorderRadius3);
-		background-color: var(--solutionColor1);
-        height: 25,91vw;
-        width: 35vw;
+		/* background-color: var(--solutionColor1); -- Parent has this bg */
+        /* height: 25,91vw; -- Comma, use padding for height */
+        /* width: 35vw; -- Use 100% of grid cell */
+        width: 100%;
+        padding: 20px; /* Add padding */
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
     .consultoriaTextArea1{
         grid-column:1;
         grid-row:1;
-        height: 25,91vw;
-        width: 35vw;
-        
     }
     .consultoriaTextArea2{
         grid-column:2;
         grid-row:2;
-        width:35vw;
-        margin-top: 12vh;
-        height: 29,16vw;
-        
+        /* margin-top: 12vh; -- Remove */
+        /* height: 29,16vw; -- Comma, use padding */
     }
 }
 
-@media screen and (min-width: 830px) { 
-
-.consultoriaTitle{
-    font-size: 24px;
-
-}
-.consultoriaParagraph{
-    font-size: 12px;
-
-}
-}
-
-@media screen and (min-width: 1000px) { 
-.consultoriaTitle{
-    font-size:26px;
+@media screen and (min-width: 830px) {
+    .consultoriaTitle{
+        font-size: var(--titleFontSize1, 36px); /* Consistent size, was 24px */
+    }
+    .consultoriaParagraph{
+        font-size: var(--metaliumFontSize3); /* 18px, was 12px */
+    }
+    .consultoriaBtn{
+        padding: 12px 25px;
+        font-size: var(--metaliumFontSize3);
+    }
 }
 
-.consultoriaParagraph{
-    font-size: 13px;
+@media screen and (min-width: 1000px) {
+    .consultoria{
+        max-width: 1300px;
+        gap: 40px;
+    }
+    .consultoriaTitle{
+        font-size:var(--titleFontSize2, 42px); /* Was 26px */
+    }
+    .consultoriaParagraph{
+        font-size: var(--metaliumFontSize3); /* 18px, was 13px */
+    }
+    .consultoriaBtn{
+        /* height: 35px; -- Let padding define */
+        padding: 14px 28px;
+        max-width: 280px;
+    }
+    .consultoriaImg1, .consultoriaImg2{
+        max-width: 450px;
+    }
 }
 
-.consultoriaBtn{
-    height: 35px;
+@media screen and (min-width: 1200px) { /* Styles from 1000px seem fine, this can be for further refinement */
+    /* .consultoriaTitle{
+        font-size: 27px;
+    } */ /* Covered by 1000px */
+    /* .consultoriaParagraph{
+        font-size: 18px;
+    } */ /* Covered by 1000px */
 }
 
+/* New media query for larger screens */
+@media screen and (min-width: 1301px) {
+    .consultoria {
+        max-width: 1500px;
+        padding: 6vw;
+        gap: 50px;
+    }
+    .consultoriaTitle {
+        font-size: var(--titleFontSize2); /* 42px */
+    }
+    .consultoriaParagraph {
+        font-size: var(--metaliumFontSize4); /* 20px */
+        line-height: 1.7;
+    }
+    .consultoriaBtn {
+        font-size: var(--metaliumFontSize4); /* 20px */
+        padding: 15px 30px;
+        max-width: 300px;
+    }
+    .consultoriaImg1, .consultoriaImg2{
+        max-width: 500px;
+    }
+    .consultoriaTextArea1, .consultoriaTextArea2{
+        padding: 30px;
+    }
 }
 
-@media screen and (min-width: 1200px) { 
-.consultoriaTitle{
-    font-size: 27px;
-}
-
-.consultoriaParagraph{
-    font-size: 18px;
-}
-
+@media screen and (min-width: 1921px) {
+    .consultoria {
+        max-width: 1700px;
+        padding: 7vw;
+        gap: 60px;
+    }
+    .consultoriaTitle {
+        font-size: var(--titleFontSize3, 48px); /* Assuming titleFontSize3 is defined */
+    }
+    .consultoriaParagraph {
+        font-size: var(--metaliumFontSize5); /* 22px */
+    }
+    .consultoriaBtn {
+        font-size: var(--metaliumFontSize5); /* 22px */
+        padding: 18px 35px;
+        max-width: 330px;
+    }
+    .consultoriaImg1, .consultoriaImg2{
+        max-width: 550px;
+    }
 }

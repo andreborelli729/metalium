@@ -1,55 +1,47 @@
 :root{
-
-
-
-
+	/* ... (keep existing :root variables from cotacao.css or a global file) ... */
 	--fullWidth: 100vw;
 	--metaliumMobileContainer: 90vw;
 	--metaliumMobileContainer2: 95vw;
 
-	
-	
 	--normalWeight: 400;
 	--normalBoldWeight: 500;
 	--boldWeight: 600;
 	--superBold: 700;
-	
+
 	--mainFontFamily: 'Arial';
-	
+
 	--titleFontSize1: 36px;
 	--titleFontSize2: 42px;
 	--titleFontSize3: 48px;
 	--titleFontSize4: 56px;
 	--titleFontSize5: 62px;
-	
-	
+
+
 	--metaliumFontSize1: 14px;
 	--metaliumFontSize2: 16px;
-	--metaliumFontSize3: 18px
+	--metaliumFontSize3: 18px;
 	--metaliumFontSize4: 20px;
 	--metaliumFontSize5: 22px;
 	--metaliumFontSize6: 24px;
-	
+
 	--metaliumLineHeight1: 115%;
 	--metaliumLineHeight3: 130%;
 	--MetaliumLineHeight4: 150%;
-	
+
 	--whiteColor: #ffffff;
 	--metaliumWhiteColor1: #f3f3f3;
 	--metaliumWhiteColor2: #EDEDED;
 	--metaliumWhiteColor3: #DEE6F1;
-	
-	--metaliumGreyColor3:  #7A7A7A;
-	
-	
-	
+
 	--metaliumGreyColor1: #B5B5B5;
 	--metaliumGreyColor2: #656565;
 	--metaliumGreyColor3:  #7A7A7A;
+
 	--metaliumBlueColor1: #02A8DA;
 	--metaliumBlueColor2: #0E1525;
 	--metaliumBlueColor3: #173046;
-	
+
 	--metaliumBorder1: 3px solid #0E1525;
 	--metaliumBorder2: 1px solid #0E1525;
 	--metaliumBorder3: 1px solid #DEE6F1;
@@ -58,89 +50,169 @@
 	--metaliumBorderRadius3: 3px;
 	--metaliumBorderRadius4: 4px;
 	--metaliumBorderRadius5: 5px;
-	
-	
+
+
 	--metaliumBgBlueOpacity1: rgba(14, 21, 37, 0.8);
-	
+
 	--metaliumShadow1: inset 0px 2px 2px rgba(0, 0, 0, 0.25);
-	--widthTablet: 70vw;
-	--sustainableTextWidth: 44vw;
-	--sustainableMobilePadding: 5vw;
-	--sustainableTabletPadding: 14vw;
-	--sustainablePaddingTop: 50px;
-	--sustainableBannerMarginTop1: calc(0.7*10vw);
-	--sustainableBannerMarginTop2: calc(0.5*6vw)
-
-   
+	/* ... other variables ... */
 }
 
 
-@media screen and (min-width: 1px) { 
-.sustentabilidade{
-	width: 0.0001px;
-	height:0.0001px;
-	opacity:0;
-	display:none;
+@media screen and (min-width: 1px) {
+    .sustentabilidade{
+        width: 0.0001px;
+        height:0.0001px;
+        opacity:0;
+        display:none;
+    }
+}
+@media screen and (min-width: 721px) {
+
+    .sustentabilidade{
+        display:grid;
+        grid-template-columns:1fr 1fr; /* Corrected comma */
+        opacity:1;
+        width:100%;
+        height:auto;
+        background-color: var(--metaliumBlueColor1);
+        align-items: center;
+        gap: 30px;
+        padding: 50px 20px; /* Added padding */
+        box-sizing: border-box;
+    }
+
+    .sustentabilidadeTitle{
+        color:white;
+        font-size:var(--metaliumFontSize6); /* 24px */
+        font-weight:var(--boldWeight);
+        text-align:left; /* Changed to left for typical layout */
+        /* width:45vw; -- Remove, let container manage width */
+        margin-bottom: 20px;
+    }
+
+    .sustentabilidadeParagraph{
+        color:white;
+        font-size:var(--metaliumFontSize2); /* 16px base */
+        font-weight:var(--normalWeight); /* Changed from bold for better readability of paragraph */
+        margin-top:0;
+        /* width:45vw; -- Remove */
+        text-align:left; /* Changed to left */
+        line-height: 1.6;
+        margin-bottom: 30px;
+    }
+
+    .sustentabilidadeBtn{
+        color:white;
+        margin-top:0;
+        /* margin-left:14vw; -- Remove, align button as needed or center */
+        margin-left: 0; /* For left alignment in text container */
+        font-size: var(--metaliumFontSize2); /* 16px */
+        font-weight:var(--boldWeight);
+        background-color: var(--metaliumBlueColor2);
+        /* width:20vw; -- Use padding and max-width */
+        /* height:10vh; -- Use padding */
+        padding: 12px 25px;
+        max-width: 220px; /* Cap button width */
+        border: none;
+        border-radius: var(--metaliumBorderRadius4);
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .sustentabilidadeImg{
+        grid-column:1;
+        /* width:40vw; -- Use % and max-width */
+        width: 100%;
+        max-width: 500px; /* Cap image size */
+        height: auto;
+        display: block; /* Removes extra space */
+        margin: 0 auto; /* Center if max-width is hit */
+    }
+    .sustentabilidadeTextContainer{
+        grid-column:2;
+        padding: 0 15px; /* Padding for text content */
+    }
 }
 
-}
-@media screen and (min-width: 721px) { 
-
-.sustentabilidade{
-	display:grid;
-	grid-template-columns:1fr,1fr;
-	opacity:1;
-	width:100%;
-	height:auto;
-	background-color: var(--metaliumBlueColor1);
-
-}
-
-.sustentabilidadeTitle{
-	color:white;
-	font-size:24px;
-	font-weight:bold;
-	text-align:center;
-	width:45vw;
-
-}
-
-.sustentabilidadeParagraph{
-	color:white;
-	font-size:14px;
-	font-weight:bold;
-	margin-top:10vh;
-	width:45vw;
-	text-align:center;
+@media screen and (min-width: 920px) {
+    .sustentabilidadeTitle{
+        font-size:var(--titleFontSize1); /* 36px */
+    }
+    .sustentabilidadeParagraph{
+        font-size:var(--metaliumFontSize3); /* 18px */
+    }
+    .sustentabilidadeBtn{
+        font-size: var(--metaliumFontSize3); /* 18px */
+        padding: 15px 30px;
+        max-width: 250px;
+    }
+    .sustentabilidadeImg{
+        max-width: 550px;
+    }
+    .sustentabilidade{
+        gap: 40px;
+        padding: 60px 30px;
+        max-width: 1200px; /* Add max-width earlier */
+        margin: 0 auto; /* Center section */
+    }
 }
 
-.sustentabilidadeBtn{
-	color:white;
-	margin-top:7vh;
-	margin-left:14vw;
-	font-size: 14px;
-	font-weight:bold;
-	background-color: var(--metaliumBlueColor2);
-	width:20vw;
-	height:10vh;
+
+/* New media query for very large screens */
+@media screen and (min-width: 1301px) {
+    .sustentabilidade {
+        max-width: 1400px; /* Cap the width of the sustentabilidade section */
+        padding: 70px 40px;
+        gap: 50px;
+        /* border-radius: 10px; -- Optional */
+    }
+
+    .sustentabilidadeImg {
+        max-width: 600px;
+    }
+
+    .sustentabilidadeTitle {
+        font-size: var(--titleFontSize2); /* 42px */
+        /* font-size: clamp(30px, 3vw, 48px); */
+        margin-bottom: 25px;
+    }
+
+    .sustentabilidadeParagraph {
+        font-size: var(--metaliumFontSize4); /* 20px */
+        /* font-size: clamp(18px, 1.5vw, 22px); */
+        line-height: 1.7;
+        margin-bottom: 35px;
+    }
+
+    .sustentabilidadeBtn {
+        font-size: var(--metaliumFontSize4); /* 20px */
+        /* font-size: clamp(16px, 1.2vw, 20px); */
+        padding: 18px 35px;
+        max-width: 280px;
+    }
 }
 
-.sustentabilidadeImg{
-	grid-column:1;
-	width:40vw;
-
+@media screen and (min-width: 1921px) {
+     .sustentabilidade {
+        max-width: 1600px; /* Further increase for very wide screens */
+        padding: 90px 50px;
+        gap: 60px;
+    }
+    .sustentabilidadeImg {
+        max-width: 700px;
+    }
+     .sustentabilidadeTitle {
+        font-size: var(--titleFontSize3); /* 48px */
+    }
+    .sustentabilidadeParagraph {
+        font-size: var(--metaliumFontSize5); /* 22px */
+        /* font-size: clamp(20px, 1.2vw, 24px); */
+    }
+    .sustentabilidadeBtn {
+        font-size: var(--metaliumFontSize5); /* 22px */
+        /* font-size: clamp(18px, 1vw, 22px); */
+        padding: 20px 40px;
+        max-width: 320px;
+    }
 }
-.sustentabilidadeTextContainer{
-	grid-column:2;
-}
-}
-
-@media screen and (min-width: 920px) { 
-.sustentabilidadeTitle{
-	font-size:30px;
-}
-.sustentabilidadeParagraph{
-	font-size:18px;
-}
-}
-

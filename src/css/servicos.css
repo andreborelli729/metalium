@@ -1,186 +1,275 @@
 :root{
-
-
-
-
+    /* Assuming global :root variables */
     --fullWidth: 100vw;
-    --metaliumMobileContainer: 90vw;
-    --metaliumMobileContainer2: 95vw;
-
-    
-    
     --normalWeight: 400;
-    --normalBoldWeight: 500;
     --boldWeight: 600;
     --superBold: 700;
-    
     --mainFontFamily: 'Arial';
-    
+
     --titleFontSize1: 36px;
     --titleFontSize2: 42px;
     --titleFontSize3: 48px;
     --titleFontSize4: 56px;
-    --titleFontSize5: 62px;
-    
-    
+
     --metaliumFontSize1: 14px;
     --metaliumFontSize2: 16px;
-    --metaliumFontSize3: 18px
+    --metaliumFontSize3: 18px;
     --metaliumFontSize4: 20px;
     --metaliumFontSize5: 22px;
     --metaliumFontSize6: 24px;
-    
-    --metaliumLineHeight1: 115%;
+
     --metaliumLineHeight3: 130%;
     --MetaliumLineHeight4: 150%;
-    
+
     --whiteColor: #ffffff;
-    --metaliumWhiteColor1: #f3f3f3;
-    --metaliumWhiteColor2: #EDEDED;
-    --metaliumWhiteColor3: #DEE6F1;
-    
-    --metaliumGreyColor3:  #7A7A7A;
-    
-    
-    
-    --metaliumGreyColor1: #B5B5B5;
+    --metaliumWhiteColor1: #f3f3f3; /* Used as background for .servicosArea4 */
+    --metaliumGreyColor1: #B5B5B5; /* Main background */
     --metaliumGreyColor2: #656565;
-    --metaliumGreyColor3:  #7A7A7A;
     --metaliumBlueColor1: #02A8DA;
     --metaliumBlueColor2: #0E1525;
     --metaliumBlueColor3: #173046;
-    
-    --metaliumBorder1: 3px solid #0E1525;
-    --metaliumBorder2: 1px solid #0E1525;
-    --metaliumBorder3: 1px solid #DEE6F1;
+
     --metaliumBorderRadius1: 1px;
-    --metaliumBorderRadius2: 2px;
-    --metaliumBorderRadius3: 3px;
     --metaliumBorderRadius4: 4px;
-    --metaliumBorderRadius5: 5px;
-    
-    
-    --metaliumBgBlueOpacity1: rgba(14, 21, 37, 0.8);
-    
-    --metaliumShadow1: inset 0px 2px 2px rgba(0, 0, 0, 0.25);
-    --widthTablet: 70vw;
-    --sustainableTextWidth: 44vw;
-    --sustainableMobilePadding: 5vw;
-    --sustainableTabletPadding: 14vw;
-    --sustainablePaddingTop: 50px;
-    --sustainableBannerMarginTop1: calc(0.7*10vw);
-    --sustainableBannerMarginTop2: calc(0.5*6vw)
-
-   
-
+    --metaliumShadowGeneric: 0 2px 5px rgba(0,0,0,0.1);
 }
-@media screen and (min-width: 300px) { 
+
+@media screen and (min-width: 300px) {
     .servicos{
-width:0.001px;
-display:none;
-opacity:0;
-height: 0.0001px;
+        width:0.001px; /* Hidden on mobile */
+        display:none;
+        opacity:0;
+        height: 0.0001px;
+    }
 }
-}
-@media screen and (min-width: 750px) { 
-.servicos{
-    width: 100%;
-    height: auto;
-    padding-top: 5vw;
-    padding-left: 0;
-    display:block;
-    opacity:1;
-    box-sizing: border-box;
-    background-color: var(--metaliumGreyColor1);
-}
+@media screen and (min-width: 750px) {
+    .servicos{
+        width: 100%;
+        height: auto;
+        padding-top: 3vw; /* Reduced from 5vw */
+        padding-bottom: 3vw;
+        /* padding-left: 0; -- Use centered max-width container instead */
+        display:block;
+        opacity:1;
+        box-sizing: border-box;
+        background-color: var(--metaliumGreyColor1);
+    }
 
-.servicosArea1, .servicosArea2, .servicosArea3{
-    display:grid;
-    grid-template-columns:1fr,3fr;
-    width: 76%;
-    margin-left:12%;
-    border: 2px, solid, black;
-}
+    .servicosArea1, .servicosArea2, .servicosArea3{
+        display:grid;
+        grid-template-columns:1fr 2fr; /* Was 1fr,3fr. Gave image more relative space */
+        /* width: 76%; -- Let max-width of parent control this */
+        /* margin-left:12%; -- Center parent instead */
+        width: 100%;
+        max-width: 1100px; /* Cap width of each service area */
+        margin: 0 auto 30px auto; /* Center areas and add bottom margin */
+        /* border: 2px solid black; -- Corrected syntax, removed for cleaner look */
+        background-color: var(--whiteColor); /* Give a card-like bg */
+        padding: 20px;
+        box-sizing: border-box;
+        border-radius: var(--metaliumBorderRadius4);
+        box-shadow: var(--metaliumShadowGeneric);
+        gap: 20px; /* Gap between image and text area */
+        align-items: center;
+    }
+    /* Alternate layout for variety: some image left, some image right */
+    .servicosArea2 .servicosImg {
+        grid-column: 2;
+        grid-row: 1;
+    }
+    .servicosArea2 .servicosTextArea2 { /* Corrected class for specificity */
+        grid-column: 1;
+        grid-row: 1;
+    }
 
-.servicosImg{
-    grid-column:1;
-    width: 22vw;
-}
 
-.servicosTextArea1, .servicosTextArea2, .servicosTextArea3{
-    grid-column:2;
-    width: 67vw;
-}
+    .servicosImg{
+        grid-column:1; /* Default, can be overridden by .servicosArea2 */
+        width: 100%; /* Was 22vw, now responsive to grid cell */
+        max-width: 300px; /* Cap image size within its cell */
+        height: auto;
+        border-radius: var(--metaliumBorderRadius1);
+        display: block;
+        margin: 0 auto; /* Center if max-width is hit */
+    }
 
-.servicosBtn{
-    font-family:var(--mainFontFamily);
-    font-style: normal;
-    font-size: var(--metaliumFontSize4);
-    line-height: 23px;
-    font-weight: var(--superBold);
+    /* Assuming servicosTextArea3 should be styled like servicosTextArea1/2 */
+    .servicosTextArea1, .servicosTextArea2, .servicosTextArea3{ /* servicosTextArea3 added */
+        grid-column:2; /* Default, can be overridden by .servicosArea2 */
+        width: 100%; /* Was 67vw, now responsive to grid cell */
+        padding: 0 15px; /* Padding inside text area */
+        box-sizing: border-box;
+    }
 
-    justify-content: center;
-    align-items: center;
-    border-radius: var(--metaliumBorderRadius1);
+    .servicosBtn{
+        font-family:var(--mainFontFamily);
+        font-style: normal;
+        font-size: var(--metaliumFontSize3); /* 18px, was metaliumFontSize4 (20px) */
+        line-height: normal; /* Was 23px */
+        font-weight: var(--boldWeight); /* Was superBold */
+        padding: 10px 20px; /* Added padding */
+        /* justify-content: center; -- Not for button itself */
+        /* align-items: center; -- Not for button itself */
+        border-radius: var(--metaliumBorderRadius4); /* Was metaliumBorderRadius1 */
+        border: none; /* Added */
+        background: var(--metaliumBlueColor1);
+        color: var(--whiteColor);
+        cursor: pointer;
+        margin-top: 20px; /* Added margin */
+        display: inline-block; /* For proper sizing and margin */
+    }
 
-    background: var(--metaliumBlueColor1);
-    color: var(--whiteColor);
-
-    cursor: pointer;
-
-}
-
-.servicosParagraph{
-    margin-top: 33px;
-
+    .servicosParagraph{
+        margin-top: 10px; /* Reduced from 33px */
 		font-family: var(--mainFontFamily);
 		font-style: normal;
 		font-weight:var(--normalWeight);
-		font-size: var(--metaliumFontSize4);
-		line-height: 150%;
-        width: 50vw;
+		font-size: var(--metaliumFontSize3); /* 18px, was metaliumFontSize4 (20px) */
+		line-height: var(--MetaliumLineHeight4);
+        width: 100%; /* Was 50vw, now responsive to text area */
 		color: var(--metaliumGreyColor2);
-}
+    }
 
-.servicosTitle{
-    font-family: var(--mainFontFamily);
-    font-style: normal;
-    font-weight: var(--superBold);
-    font-size: 28px;
-    line-height: 34px;
-    width:50vw;
-    color: var(--metaliumBlueColor3);
-}
+    .servicosTitle{
+        font-family: var(--mainFontFamily);
+        font-style: normal;
+        font-weight: var(--superBold);
+        font-size: var(--titleFontSize0, 28px); /* Ensure titleFontSize0 is defined or use px */
+        line-height: 1.2; /* Was 34px */
+        width:100%; /* Was 50vw */
+        color: var(--metaliumBlueColor3);
+        margin-bottom: 5px; /* Add margin */
+    }
 
-.clienteTitle1, .clienteTitle2, .clienteTitle3{
-	font-family: var(--mainFontFamily);
+    .servicosArea4 { /* Cliente section styling */
+        width: 100%;
+        max-width: 1100px;
+        margin: 40px auto 0 auto;
+        padding: 30px;
+        background-color: var(--metaliumWhiteColor1); /* Different background */
+        border-radius: var(--metaliumBorderRadius4);
+        box-shadow: var(--metaliumShadowGeneric);
+        text-align: center;
+    }
+
+    .clienteTitle, .clienteTitle2, .clienteSpan, .clienteParagraph { /* .clienteTitle3 removed if not used */
+	    font-family: var(--mainFontFamily);
 		font-style: normal;
-		font-weight: var(--superBold);
-}
-.clienteTitle{
-    color: var(--metaliumBlueColor3);
-    font-size: 36px;
-    line-height: 100%;
+    }
+    .clienteTitle{ /* h4 in JSX */
+        color: var(--metaliumBlueColor3);
+        font-size: var(--titleFontSize1); /* 36px */
+        line-height: 1.1; /* Was 100% */
+        font-weight: var(--superBold);
+        margin-bottom: 5px;
+    }
 
-}
+    .clienteTitle2{ /* h5 in JSX */
+        color: var(--metaliumBlueColor2); /* Was black */
+        font-size: var(--titleFontSize0, 28px); /* Was 20px then 30px, ensure var */
+        font-weight: var(--superBold);
+        margin-bottom: 10px;
+    }
 
-.clienteTitle2{
-    color: black;
-    font-size: 20px;
-    font-size: 30px;
+    .clienteSpan{ /* h6 in JSX, and inline spans */
+        color: var(--metaliumBlueColor3);
+        font-size: var(--metaliumFontSize4); /* 20px */
+		line-height: var(--metaliumLineHeight3); /* Was 23px */
+        font-weight: var(--boldWeight); /* Added for emphasis */
+        display: block; /* Make h6 span block */
+        margin-bottom: 15px;
+    }
+    .servicosArea4 .clienteParagraph .clienteSpan { /* Inline spans */
+        display: inline;
+        font-weight: var(--normalBoldWeight);
+    }
 
-}
-
-.clienteSpan{
-    color: var(--metaliumBlueColor3);
-    font-size: 20px;
-		line-height: 23px;
-}
-.clienteParagraph{
-    font-size: 20px;
-		line-height: 23px;
-		
+    .clienteParagraph{
+        font-size: var(--metaliumFontSize4); /* 20px */
+		line-height: var(--MetaliumLineHeight4); /* Was 23px */
 		color: var(--metaliumGreyColor2);
+        max-width: 800px; /* Cap paragraph width */
+        margin: 0 auto; /* Center */
+    }
 }
 
+/* New media query for larger screens */
+@media screen and (min-width: 1301px) {
+    .servicosArea1, .servicosArea2, .servicosArea3, .servicosArea4 {
+        max-width: 1400px; /* Increase max-width */
+        padding: 30px;
+    }
+    .servicosArea1, .servicosArea2, .servicosArea3 {
+        gap: 30px;
+        margin-bottom: 40px;
+    }
+    .servicosImg {
+        max-width: 350px;
+    }
+    .servicosTextArea1, .servicosTextArea2, .servicosTextArea3 {
+        padding: 0 20px;
+    }
+    .servicosTitle {
+        font-size: var(--titleFontSize1); /* 36px */
+    }
+    .servicosParagraph {
+        font-size: var(--metaliumFontSize4); /* 20px */
+        line-height: 1.7;
+    }
+    .servicosBtn {
+        font-size: var(--metaliumFontSize4); /* 20px */
+        padding: 12px 25px;
+    }
+    /* Cliente Section */
+    .clienteTitle {
+        font-size: var(--titleFontSize2); /* 42px */
+    }
+    .clienteTitle2 {
+        font-size: var(--titleFontSize1); /* 36px */
+    }
+    .clienteSpan { /* h6 */
+        font-size: var(--metaliumFontSize5); /* 22px */
+    }
+    .clienteParagraph {
+        font-size: var(--metaliumFontSize5); /* 22px */
+        max-width: 900px;
+    }
+}
+
+@media screen and (min-width: 1921px) {
+    .servicosArea1, .servicosArea2, .servicosArea3, .servicosArea4 {
+        max-width: 1600px; /* Further increase */
+        padding: 40px;
+    }
+    .servicosArea1, .servicosArea2, .servicosArea3 {
+        gap: 40px;
+        margin-bottom: 50px;
+    }
+    .servicosImg {
+        max-width: 400px;
+    }
+    .servicosTitle {
+        font-size: var(--titleFontSize2); /* 42px */
+    }
+    .servicosParagraph {
+        font-size: var(--metaliumFontSize5); /* 22px */
+    }
+    .servicosBtn {
+        font-size: var(--metaliumFontSize5); /* 22px */
+        padding: 14px 28px;
+    }
+    /* Cliente Section */
+    .clienteTitle {
+        font-size: var(--titleFontSize3); /* 48px */
+    }
+    .clienteTitle2 {
+        font-size: var(--titleFontSize2); /* 42px */
+    }
+    .clienteSpan { /* h6 */
+        font-size: var(--metaliumFontSize6); /* 24px */
+    }
+    .clienteParagraph {
+        font-size: var(--metaliumFontSize6); /* 24px */
+        max-width: 1000px;
+    }
 }

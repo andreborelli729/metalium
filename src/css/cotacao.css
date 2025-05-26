@@ -2,48 +2,48 @@
     --fullWidth: 100vw;
     --metaliumMobileContainer: 90vw;
     --metaliumMobileContainer2: 95vw;
-    
+
     --normalWeight: 400;
     --normalBoldWeight: 500;
     --boldWeight: 600;
     --superBold: 700;
-    
+
     --mainFontFamily: 'Arial';
-    
+
     --titleFontSize1: 36px;
     --titleFontSize2: 42px;
     --titleFontSize3: 48px;
     --titleFontSize4: 56px;
     --titleFontSize5: 62px;
-    
-    
+
+
     --metaliumFontSize1: 14px;
     --metaliumFontSize2: 16px;
-    --metaliumFontSize3: 18px
+    --metaliumFontSize3: 18px;
     --metaliumFontSize4: 20px;
     --metaliumFontSize5: 22px;
     --metaliumFontSize6: 24px;
-    
+
     --metaliumLineHeight1: 115%;
     --metaliumLineHeight3: 130%;
     --MetaliumLineHeight4: 150%;
-    
+
     --whiteColor: #ffffff;
     --metaliumWhiteColor1: #f3f3f3;
     --metaliumWhiteColor2: #EDEDED;
     --metaliumWhiteColor3: #DEE6F1;
-    
+
     --metaliumGreyColor3:  #7A7A7A;
-    
-    
-    
+
+
+
     --metaliumGreyColor1: #B5B5B5;
     --metaliumGreyColor2: #656565;
-    --metaliumGreyColor3:  #7A7A7A;
+    /* --metaliumGreyColor3:  #7A7A7A; -- Redefined, already present above */
     --metaliumBlueColor1: #02A8DA;
     --metaliumBlueColor2: #0E1525;
     --metaliumBlueColor3: #173046;
-    
+
     --metaliumBorder1: 3px solid #0E1525;
     --metaliumBorder2: 1px solid #0E1525;
     --metaliumBorder3: 1px solid #DEE6F1;
@@ -52,30 +52,32 @@
     --metaliumBorderRadius3: 3px;
     --metaliumBorderRadius4: 4px;
     --metaliumBorderRadius5: 5px;
-    
-    
+
+
     --metaliumBgBlueOpacity1: rgba(14, 21, 37, 0.8);
-    
+
     --metaliumShadow1: inset 0px 2px 2px rgba(0, 0, 0, 0.25);
-    
+
+}
+
+@media screen and (min-width: 300px) {
+    .cotacao{
+        width: 100%;
+        height: auto;
+        background-color: var(--metaliumBlueColor1);
+        padding: 30px 0; /* Added some vertical padding */
+
+
     }
-    
-    @media screen and (min-width: 300px) { 
-        .cotacao{
-            width: 100%;
-            height: auto;
-            background-color: var(--metaliumBlueColor1);        
-        
-        
-        }
-        .cotacaoTitle{
-            font-size: var(--titleFontSize2);
-            line-height: var(--metaliumLineHeight1);
-            font-weight: 800;
-            color: var(--metaliumBlueColor2);
-            text-align:center;
-        }
+    .cotacaoTitle{
+        font-size: var(--titleFontSize2);
+        line-height: var(--metaliumLineHeight1);
+        font-weight: 800;
+        color: var(--metaliumBlueColor2);
+        text-align:center;
+        padding: 0 15px; /* Padding for smaller screens */
     }
+
 
     .cotacaoParagraph{
         color:  var(--whiteColor);
@@ -83,115 +85,212 @@
         line-height: var(--MetaliumLineHeight4);
         font-weight: var(--normalWeight);
         text-align:center;
+        padding: 0 15px; /* Padding for smaller screens */
 
-}
-
-.cotacaoParagraph2{
-padding-top:5vh;
-color: var(--metaliumBlueColor2);
-font-size: var(--metaliumFontSize6);
-line-height: var(--MetaliumLineHeight4);
-font-weight: var(--normalWeight);   
-text-align:center;  
-}
-
-.cotacaoForm{
-display:block;
-width:100vw;
-padding-left:5vw;
-}
-#nome, #email, #empresa, #telefone{
-    color:var(--metaliumGreyColor1);
-           font-size: var(--metaliumFontSize4);
-           line-height: var(--MetaliumLineHeight4);
-           font-weight: var(--normalWeight);   
-           width:84vw;
-           background-color: var(--metaliumWhiteColor1);
-           margin-top:5vh;
-           height: 8vh;
-        }
-        .cotacaoBtn{
-            width: 80vw;
-            margin-left:10vw;
-            height: 15vh;
-            background-color: var(--metaliumBlueColor2);
-            color: var(--whiteColor);
-            font-size: 20px;
-            font-weight:800;
-            text-align:center;
-            margin-top: 15vh;
-            cursor: pointer;
-        
-        }
-
-
-    @media screen and (min-width: 500px) { 
-   
-
-        .cotacaoBtn{
-width:36vw;
-margin-left:32vw;
-      
-        }
-        .cotacaoForm{
-            display:grid;
-            width:100%;
-            padding-left:0;
-            grid-template-columns:1fr,1fr;
-            grid-template-rows:1fr,1fr;
-        }
-#nome, #email, #empresa, #telefone,#nome::placeholder, #telefone::placeholder, #email::placeholder, #empresa::placeholder{
-    
-           font-size: var(--metaliumFontSize6);
-           line-height: var(--MetaliumLineHeight6);
-           font-weight: var(--normalWeight);    
-}
-        #nome{
-            grid-column:1;
-            grid-row:1;
-            width:40vw;
-            height: 8vh;
-            margin-left:5vw;
-            background-color: var(--metaliumWhiteColor1);
-
-
-        }
-        #telefone{
-            grid-column:2;
-            grid-row:1;
-            width:40vw;
-            height: 8vh;
-            background-color: var(--metaliumWhiteColor1);
-
-        }
-        #email{
-            grid-column:1;
-            margin-left:5vw;
-            margin-top:8vh;
-            grid-row:2;
-            width:40vw;
-            height: 8vh;
-            background-color: var(--metaliumWhiteColor1);
-
-        }
-        #empresa{
-            grid-column:2;
-            grid-row:2;
-            width:40vw;
-            margin-top: 8vh;
-            height: 8vh;
-            background-color: var(--metaliumWhiteColor1);
-
-        }
-
-
-        #nome::placeholder, #telefone::placeholder, #email::placeholder, #empresa::placeholder{
-           color:var(--metaliumGreyColor1);
-           font-size: var(--metaliumFontSize6);
-           line-height: var(--MetaliumLineHeight6);
-           font-weight: var(--normalWeight);    
-            
-        }
-
-        
     }
+
+    .cotacaoParagraph2{
+        padding-top:5vh;
+        color: var(--metaliumBlueColor2);
+        font-size: var(--metaliumFontSize6);
+        line-height: var(--MetaliumLineHeight4);
+        font-weight: var(--normalWeight);
+        text-align:center;
+        padding: 0 15px; /* Padding for smaller screens */
+    }
+
+    .cotacaoForm{
+        display:block;
+        width:100%; /* Changed from 100vw */
+        padding-left:5vw;
+        padding-right: 5vw; /* Added for symmetry */
+        box-sizing: border-box;
+    }
+    #nome, #email, #empresa, #telefone{
+        color:var(--metaliumGreyColor1);
+        font-size: var(--metaliumFontSize4);
+        line-height: var(--MetaliumLineHeight4);
+        font-weight: var(--normalWeight);
+        width:100%; /* Changed from 84vw */
+        max-width: 400px; /* Cap width on small screens */
+        margin-left: auto; /* Center */
+        margin-right: auto; /* Center */
+        display: block; /* For auto margins */
+        background-color: var(--metaliumWhiteColor1);
+        margin-top:3vh; /* Reduced from 5vh */
+        height: auto; /* Adjust based on padding */
+        min-height: 50px; /* Minimum height */
+        padding: 10px;
+        box-sizing: border-box;
+        border: var(--metaliumBorder3);
+        border-radius: var(--metaliumBorderRadius3);
+    }
+    .cotacaoBtn{
+        width: 80vw;
+        max-width: 300px; /* Cap width */
+        margin-left:auto; /* Center */
+        margin-right:auto; /* Center */
+        display: block; /* For auto margin */
+        height: auto; /* Adjust based on padding */
+        padding: 15px;
+        background-color: var(--metaliumBlueColor2);
+        color: var(--whiteColor);
+        font-size: 20px;
+        font-weight:800;
+        text-align:center;
+        margin-top: 5vh; /* Reduced from 15vh */
+        cursor: pointer;
+        border: none;
+        border-radius: var(--metaliumBorderRadius4);
+    }
+}
+
+
+@media screen and (min-width: 500px) {
+
+
+    .cotacaoBtn{
+        /* width:36vw; */ /* Will be handled by max-width */
+        /* margin-left:32vw; */ /* Centered with auto margins */
+        margin-top: 7vh;
+    }
+    .cotacaoForm{
+        display:grid;
+        width:100%;
+        max-width: 800px; /* Max width for the form */
+        margin-left: auto;
+        margin-right: auto;
+        padding-left:20px; /* Padding for the form container */
+        padding-right:20px;
+        grid-template-columns:1fr 1fr;
+        grid-template-rows:auto auto; /* Use auto for row height */
+        gap: 20px; /* Add gap */
+    }
+    #nome, #email, #empresa, #telefone, #nome::placeholder, #telefone::placeholder, #email::placeholder, #empresa::placeholder{
+        font-size: var(--metaliumFontSize5); /* Slightly smaller than metaliumFontSize6 for inputs */
+        line-height: var(--MetaliumLineHeight4); /* Assuming this is appropriate, as MetaliumLineHeight6 is not defined */
+        font-weight: var(--normalWeight);
+    }
+    #nome, #email, #empresa, #telefone{
+        width: 100%; /* Let the grid control the width */
+        /* max-width: 500px; -- Can be adjusted if needed, but 100% of grid cell is usually fine */
+        height: auto; /* Let padding define height */
+        min-height: 50px;
+        /* max-height: 70px; -- Optional: if vh was too much */
+        background-color: var(--metaliumWhiteColor1);
+        box-sizing: border-box;
+        padding: 12px;
+        margin-top: 0; /* Grid gap handles spacing */
+    }
+
+    #nome{
+        grid-column:1;
+        grid-row:1;
+        /* width:40vw; */
+        margin-left:0; /* Removed margin-left, rely on grid gap and form padding */
+    }
+    #telefone{
+        grid-column:2;
+        grid-row:1;
+        /* width:40vw; */
+    }
+    #email{
+        grid-column:1;
+        margin-left:0;
+        margin-top:0;
+        grid-row:2;
+        /* width:40vw; */
+    }
+    #empresa{
+        grid-column:2;
+        grid-row:2;
+        /* width:40vw; */
+        margin-top: 0;
+    }
+
+
+    #nome::placeholder, #telefone::placeholder, #email::placeholder, #empresa::placeholder{
+       color:var(--metaliumGreyColor1);
+       font-size: var(--metaliumFontSize4); /* Slightly smaller for placeholders */
+       /* line-height: var(--MetaliumLineHeight6); */ /* Not defined */
+       font-weight: var(--normalWeight);
+    }
+}
+
+/* New media query for larger screens */
+@media screen and (min-width: 1301px) {
+    .cotacao {
+        padding: 70px 0;
+    }
+
+    .cotacaoTextContainer { /* Create a wrapper if title and paragraphs need a shared max-width */
+        max-width: 1200px;
+        margin: 0 auto 40px auto;
+        padding: 0 20px;
+    }
+
+    .cotacaoTitle{
+        font-size: var(--titleFontSize3); /* e.g., 48px */
+        /* font-size: clamp(var(--titleFontSize2), 3vw, var(--titleFontSize4)); */
+    }
+
+    .cotacaoParagraph, .cotacaoParagraph2 {
+        font-size: var(--metaliumFontSize5); /* e.g., 22px */
+        /* font-size: clamp(var(--metaliumFontSize4), 1.5vw, var(--metaliumFontSize6)); */
+    }
+    .cotacaoParagraph2{
+        padding-top: 3vh;
+    }
+
+    .cotacaoForm {
+        max-width: 1000px; /* Max width for the form itself */
+        gap: 25px;
+    }
+
+    #nome, #email, #empresa, #telefone {
+        font-size: var(--metaliumFontSize4); /* 20px for inputs on large screens */
+        min-height: 55px;
+        padding: 15px;
+    }
+
+    #nome::placeholder, #telefone::placeholder, #email::placeholder, #empresa::placeholder{
+        font-size: var(--metaliumFontSize3); /* 18px for placeholders */
+    }
+
+    .cotacaoBtn {
+        max-width: 350px;
+        padding: 18px 35px;
+        font-size: var(--metaliumFontSize5); /* 22px */
+        /* font-size: clamp(18px, 1.2vw, 22px); */
+        margin-top: 5vh;
+    }
+}
+
+@media screen and (min-width: 1921px) {
+    .cotacaoTextContainer {
+        max-width: 1400px;
+        margin-bottom: 50px;
+    }
+    .cotacaoTitle{
+        font-size: var(--titleFontSize4); /* e.g., 56px */
+    }
+    .cotacaoParagraph, .cotacaoParagraph2 {
+        font-size: var(--metaliumFontSize6); /* e.g., 24px */
+    }
+     .cotacaoForm {
+        max-width: 1200px; /* Max width for the form itself */
+        gap: 30px;
+    }
+    #nome, #email, #empresa, #telefone {
+        font-size: var(--metaliumFontSize5); /* 22px */
+        min-height: 60px;
+    }
+    #nome::placeholder, #telefone::placeholder, #email::placeholder, #empresa::placeholder{
+        font-size: var(--metaliumFontSize4); /* 20px for placeholders */
+    }
+    .cotacaoBtn {
+        max-width: 400px;
+        padding: 20px 40px;
+        font-size: var(--metaliumFontSize6); /* 24px */
+    }
+}

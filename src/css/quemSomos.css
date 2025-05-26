@@ -1,253 +1,281 @@
 :root{
-
-
-
-
+    /* Assuming global :root variables */
     --fullWidth: 100vw;
     --metaliumMobileContainer: 90vw;
     --metaliumMobileContainer2: 95vw;
 
-    
-    
     --normalWeight: 400;
     --normalBoldWeight: 500;
     --boldWeight: 600;
     --superBold: 700;
-    
+
     --mainFontFamily: 'Arial';
-    
+
     --titleFontSize1: 36px;
     --titleFontSize2: 42px;
     --titleFontSize3: 48px;
     --titleFontSize4: 56px;
     --titleFontSize5: 62px;
-    
-    
+
     --metaliumFontSize1: 14px;
     --metaliumFontSize2: 16px;
-    --metaliumFontSize3: 18px
+    --metaliumFontSize3: 18px;
     --metaliumFontSize4: 20px;
     --metaliumFontSize5: 22px;
     --metaliumFontSize6: 24px;
-    
+
     --metaliumLineHeight1: 115%;
     --metaliumLineHeight3: 130%;
     --MetaliumLineHeight4: 150%;
-    
+
     --whiteColor: #ffffff;
     --metaliumWhiteColor1: #f3f3f3;
     --metaliumWhiteColor2: #EDEDED;
     --metaliumWhiteColor3: #DEE6F1;
-    
-    --metaliumGreyColor3:  #7A7A7A;
-    
-    
-    
+
     --metaliumGreyColor1: #B5B5B5;
     --metaliumGreyColor2: #656565;
     --metaliumGreyColor3:  #7A7A7A;
+
     --metaliumBlueColor1: #02A8DA;
     --metaliumBlueColor2: #0E1525;
     --metaliumBlueColor3: #173046;
-    
+
     --metaliumBorder1: 3px solid #0E1525;
     --metaliumBorder2: 1px solid #0E1525;
     --metaliumBorder3: 1px solid #DEE6F1;
+    /* --metaliumBorder5: (Assuming 1px solid var(--metaliumBlueColor2) or similar if used) */
     --metaliumBorderRadius1: 1px;
     --metaliumBorderRadius2: 2px;
     --metaliumBorderRadius3: 3px;
     --metaliumBorderRadius4: 4px;
     --metaliumBorderRadius5: 5px;
-    
-    
+
     --metaliumBgBlueOpacity1: rgba(14, 21, 37, 0.8);
-    
     --metaliumShadow1: inset 0px 2px 2px rgba(0, 0, 0, 0.25);
-    --widthTablet: 70vw;
-    --sustainableTextWidth: 44vw;
-    --sustainableMobilePadding: 5vw;
-    --sustainableTabletPadding: 14vw;
-    --sustainablePaddingTop: 50px;
-    --sustainableBannerMarginTop1: calc(0.7*10vw);
-    --sustainableBannerMarginTop2: calc(0.5*6vw)
-
-   
-
 }
-@media screen and (min-width: 300px) { 
+
+@media screen and (min-width: 300px) {
     .quemSomos{
-    background-color:var(--metaliumGreyColor1);
-    height: auto;
-    width:100vw;
-    display:block;
+        background-color:var(--metaliumWhiteColor1); /* Changed from GreyColor1 for better contrast */
+        height: auto;
+        width:100%; /* Was 100vw */
+        display:block;
+        padding: 30px 15px;
+        box-sizing: border-box;
     }
     .quemSomosTitle{
         font-weight: var(--superBold);
-        line-height: 100%;
+        line-height: 1.1; /* Adjusted from 100% */
         color: var(--metaliumBlueColor3);
-        width:90vw;
-        font-size:42px;
-    
+        width:auto; /* Was 90vw */
+        font-size:var(--titleFontSize2); /* 42px */
+        text-align:center;
+        margin-bottom: 20px;
     }
-    .quemSomosTitle, .quemSomosParagraph, .quemSomosParagraph2, .quemSomosSpan, .quemSomosBtn{
+    .quemSomosTitle, .quemSomosParagraph, .quemSomosParagraph2, .quemSomosBtn{ /* Removed .quemSomosSpan from general text align */
         font-family: var(--mainFontFamily) ;
         font-style: normal;
-        text-align:center;
-    
     }
+     .quemSomosParagraph, .quemSomosParagraph2{
+        text-align:left; /* Better for readability */
+     }
+
+
     .quemSomosParagraph, .quemSomosParagraph2{
-        width: 90vw;
-        font-size: 12px;
+        width: auto; /* Was 90vw */
+        font-size: var(--metaliumFontSize2); /* 16px, up from 12px */
         font-weight: var(--normalWeight);
-        line-height: var(--metaliumLineHeight4);
-        padding-left:5vw;
+        line-height: var(--MetaliumLineHeight4);
+        /* padding-left:5vw; -- Handled by section padding */
         color: var(--metaliumGreyColor2);
+        margin-bottom: 15px;
     }
-    
+
     .quemSomosParagraph2{
-        padding-top: 8vh;
-        padding-left: 5vw;
+        padding-top: 3vh; /* Reduced from 8vh */
+        /* padding-left: 5vw; */
     }
     .quemSomosImg{
-        border: var(--metaliumBorder5);
-        width:90vw;
-        margin-left:5vw;
+        /* border: var(--metaliumBorder5); -- Define or remove */
+        border: 1px solid var(--metaliumGreyColor1); /* Example border */
+        width:100%; /* Was 90vw */
+        max-width: 400px; /* Cap image size on mobile */
+        height: auto;
+        display: block;
+        margin: 20px auto 0 auto; /* Center image */
+        border-radius: var(--metaliumBorderRadius4);
     }
     .quemSomosBtn{
-        font-size: var(--metaliumFontSize6);
-        width:90vw;
+        font-size: var(--metaliumFontSize5); /* 22px, was metaliumFontSize6 */
+        width:100%; /* Was 90vw */
+        max-width: 320px; /* Cap button width */
+        display: block; /* For auto margin */
+        margin-left: auto;
+        margin-right: auto;
         font-weight: var(--superBold);
-        line-height: var(--metaliumLineHeight4);
-        margin-top: 3vh;   
-        margin-bottom:3vh; 
-        padding: 16 32;
-        border-radius: 5px;
-        margin-left: 5vw;
+        line-height: normal; /* Auto line height for button */
+        margin-top: 3vh;
+        margin-bottom:3vh;
+        padding: 15px 30px; /* Was 16 32, ensure units or use px */
+        border-radius: var(--metaliumBorderRadius5);
+        /* margin-left: 5vw; -- Centered now */
         background: var(--metaliumBlueColor1);
         color:var(--whiteColor);
-        height: 13vh;
+        height: auto; /* Was 13vh, let padding define height */
+        min-height: 50px;
         cursor: pointer;
+        text-align: center;
+        border: none;
     }
-}    
-
-@media screen and (min-width: 640px) { 
-.quemSomos{
-    display:grid;
-    width:100%;
-    grid-template-columns:3fr,5fr;
+    .quemSomosSpan{ /* Specific styling for span */
+       font-weight: var(--normalBoldWeight);
+       color: var(--metaliumBlueColor3);
+    }
 }
 
-.quemSomosParagraph2{
-padding-top:0;
+@media screen and (min-width: 640px) {
+    .quemSomos{
+        display:grid;
+        width:100%;
+        grid-template-columns:1fr 1fr; /* Was 3fr,5fr, more balanced 1fr 1fr or 2fr 3fr */
+        gap: 30px; /* Add gap */
+        align-items: center; /* Vertically align items */
+        padding: 50px 30px;
+        max-width: 1100px; /* Add initial max-width */
+        margin: 0 auto; /* Center section */
+    }
+
+    .quemSomosTextContainer{
+        grid-column: 1; /* Text first */
+        order: 1; /* Explicit order */
+    }
+    .quemSomosImg{
+        grid-column:2; /* Image second */
+        order: 2;
+        width:100%; /* Was auto/35vw */
+        max-width: 450px; /* Cap image size */
+        /* padding-left: 15vw; -- Remove, rely on grid gap */
+        /* padding-right: 5vw; -- Remove */
+        margin: 0; /* Reset mobile margins */
+    }
+
+    .quemSomosTitle{
+        width:auto; /* Was 30vw */
+        text-align:left;
+        /* padding-left:5vw; -- Removed */
+        font-size:var(--titleFontSize1); /* 36px, was 28px */
+        margin-bottom: 25px;
+    }
+
+    .quemSomosParagraph, .quemSomosParagraph2{
+        /* width:40vw; width:auto; -- Set to auto */
+        width: auto;
+        text-align:left;
+        font-size:var(--metaliumFontSize2); /* 16px, was 10px */
+        padding-left: 0; /* Remove padding */
+        margin-bottom: 20px;
+    }
+    .quemSomosParagraph2{
+        padding-top:0;
+    }
+
+    .quemSomosBtn{
+        font-size: var(--metaliumFontSize4); /* 20px */
+        /* width:30vw; */
+        max-width: 280px;
+        height: auto; /* Was 7vh */
+        min-height: 45px;
+        padding: 12px 25px;
+        margin-left: 0; /* Align to left of text container */
+    }
+}
+@media screen and (min-width: 730px) { /* This breakpoint might be redundant with 640 and 850 adjustments */
+    /* .quemSomosParagraph, .quemSomosParagraph2{ -- Typo in original .quemSomosParagraph12
+        font-size:12px;
+    } */ /* Font size handled by 640px and up */
+    .quemSomosTitle{
+        font-size:var(--titleFontSize2); /* 42px, was 32px */
+    }
 }
 
-.quemSomosParagraph, .quemSomosParagraph2{
-width:40vw;
-width:auto;
-text-align:left;
-font-size:10px;
-}
-.quemSomosImg{
-width:auto;
-}
-.quemSomosBtn{
-    font-size: var(--metaliumFontSize4);
-    width:30vw;
-    font-weight: var(--superBold);
-    line-height: var(--metaliumLineHeight4);
-    margin-top: 3vh;
-    padding: 16 32;
-    border-radius: 5px;
-    margin-left: 5vw;
-    background: var(--metaliumBlueColor1);
-    color:var(--whiteColor);
-    height: 7vh;
-    cursor: pointer;
-}
-
-
-.quemSomosSpan{
-    color: var(--metaliumBlueColor3);
-
-}
-
-.quemSomosTitle{
-    font-size: 28px;
-    font-weight: var(--superBold);
-    line-height: 100%;
-    color: var(--metaliumBlueColor3);
-    padding-left:5vw;
-    width:30vw;
-    text-align:left;
-}
-
-.quemSomosTextContainer{
-    grid-column: 1;
-    
-}
-
-.quemSomosImg{
-    grid-column:2;
-    width:35vw;
-    padding-left: 15vw;
-    padding-right: 5vw;
-}
-
-
-}
-@media screen and (min-width: 730px) { 
-.quemSomosParagraph, .quemSomosParagraph12{
-    font-size:12px;
-}
-
-.quemSomosTitle{
-    font-size:32px;
-}
-}
-
-@media screen and (min-width: 850px) { 
-.quemSomosBtn{
-    font-size: var(--metaliumFontSize6);
-    width:30vw;
-    font-weight: var(--superBold);
-    line-height: var(--metaliumLineHeight4);
-    margin-top: 3vh;
-    padding: 16 32;
-    border-radius: 5px;
-    margin-left: 5vw;
-    background: var(--metaliumBlueColor1);
-    color:var(--whiteColor);
-    height: 13vh;
-    cursor: pointer;
-}
-.quemSomosParagraph2{
-    padding-top:0;
+@media screen and (min-width: 850px) {
+    .quemSomos{
+        max-width: 1200px;
+        gap: 40px;
+    }
+    .quemSomosBtn{
+        font-size: var(--metaliumFontSize5); /* 22px, was metaliumFontSize6 */
+        /* width:30vw; */
+        max-width: 300px;
+        height: auto; /* Was 13vh */
+        min-height: 50px;
+        padding: 15px 30px;
+    }
+    .quemSomosParagraph, .quemSomosParagraph2{
+        font-size: var(--metaliumFontSize3); /* 18px */
     }
     .quemSomosTitle{
-        font-size: var(--titleFontSize1);
-        font-weight: var(--superBold);
-        line-height: 100%;
-        color: var(--metaliumBlueColor3);
-        padding-left:5vw;
-        width:30vw;
-        text-align:left;
+        font-size: var(--titleFontSize2); /* 42px, was titleFontSize1 */
+        /* width:30vw; */
     }
 }
-@media screen and (min-width: 950px) { 
-.quemSomosParagraph, .quemSomosParagraph2{
-font-size: 16px;
-
+@media screen and (min-width: 950px) {
+    /* .quemSomosParagraph, .quemSomosParagraph2{
+        font-size: 16px; -- Handled by 850px (18px), adjust if 16px is specifically needed here
+    } */
 }
-}
 
-@media screen and (min-width: 1100px) { 
+@media screen and (min-width: 1100px) {
     .quemSomosParagraph, .quemSomosParagraph2{
-font-size: 18px;
+        font-size: var(--metaliumFontSize4); /* 20px, was 18px */
     }
+    .quemSomos{
+        max-width: 1300px;
+    }
+}
+@media screen and (min-width: 1300px) { /* Already exists, review for >1300px needs */
+    .quemSomosParagraph, .quemSomosParagraph2{
+        font-size: var(--metaliumFontSize4); /* Kept at 20px, or slightly larger if desired */
+        line-height: 1.7;
+    }
+    .quemSomosTitle{
+        font-size: var(--titleFontSize3); /* 48px */
+    }
+    .quemSomosBtn{
+        font-size: var(--metaliumFontSize5); /* 22px */
+        padding: 16px 32px;
+        max-width: 320px;
+    }
+    .quemSomosImg{
+        max-width: 500px;
+    }
+    .quemSomos{
+        padding: 70px 40px;
+        max-width: 1400px; /* Max width for this breakpoint */
+        gap: 50px;
+    }
+}
 
-}
-@media screen and (min-width: 1300px) { 
-.quemSomosParagraph, .quemSomosParagraph2{
-    font-size: 20px;
-}
+/* New breakpoint for very large screens */
+@media screen and (min-width: 1921px) {
+    .quemSomos {
+        max-width: 1600px;
+        padding: 90px 50px;
+        gap: 60px;
+    }
+    .quemSomosTitle {
+        font-size: var(--titleFontSize4); /* 56px */
+    }
+    .quemSomosParagraph, .quemSomosParagraph2 {
+        font-size: var(--metaliumFontSize5); /* 22px */
+    }
+    .quemSomosBtn {
+        font-size: var(--metaliumFontSize6); /* 24px */
+        padding: 18px 36px;
+        max-width: 350px;
+    }
+    .quemSomosImg {
+        max-width: 600px;
+    }
 }

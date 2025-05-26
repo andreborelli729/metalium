@@ -1,55 +1,48 @@
 :root{
-
-
-
-
+    /* ... (keep existing :root variables from cotacao.css or a global file) ... */
+    /* Shared variables are assumed to be globally available or repeated here */
     --fullWidth: 100vw;
     --metaliumMobileContainer: 90vw;
     --metaliumMobileContainer2: 95vw;
 
-    
-    
     --normalWeight: 400;
     --normalBoldWeight: 500;
     --boldWeight: 600;
     --superBold: 700;
-    
+
     --mainFontFamily: 'Arial';
-    
+
     --titleFontSize1: 36px;
     --titleFontSize2: 42px;
     --titleFontSize3: 48px;
     --titleFontSize4: 56px;
     --titleFontSize5: 62px;
-    
-    
+
+
     --metaliumFontSize1: 14px;
     --metaliumFontSize2: 16px;
-    --metaliumFontSize3: 18px
+    --metaliumFontSize3: 18px;
     --metaliumFontSize4: 20px;
     --metaliumFontSize5: 22px;
     --metaliumFontSize6: 24px;
-    
+
     --metaliumLineHeight1: 115%;
     --metaliumLineHeight3: 130%;
     --MetaliumLineHeight4: 150%;
-    
+
     --whiteColor: #ffffff;
     --metaliumWhiteColor1: #f3f3f3;
     --metaliumWhiteColor2: #EDEDED;
     --metaliumWhiteColor3: #DEE6F1;
-    
-    --metaliumGreyColor3:  #7A7A7A;
-    
-    
-    
+
     --metaliumGreyColor1: #B5B5B5;
     --metaliumGreyColor2: #656565;
     --metaliumGreyColor3:  #7A7A7A;
+
     --metaliumBlueColor1: #02A8DA;
     --metaliumBlueColor2: #0E1525;
     --metaliumBlueColor3: #173046;
-    
+
     --metaliumBorder1: 3px solid #0E1525;
     --metaliumBorder2: 1px solid #0E1525;
     --metaliumBorder3: 1px solid #DEE6F1;
@@ -58,193 +51,213 @@
     --metaliumBorderRadius3: 3px;
     --metaliumBorderRadius4: 4px;
     --metaliumBorderRadius5: 5px;
-    
-    
+
+
     --metaliumBgBlueOpacity1: rgba(14, 21, 37, 0.8);
-    
+
     --metaliumShadow1: inset 0px 2px 2px rgba(0, 0, 0, 0.25);
-    --widthTablet: 70vw;
-    --sustainableTextWidth: 44vw;
-    --sustainableMobilePadding: 5vw;
-    --sustainableTabletPadding: 14vw;
-    --sustainablePaddingTop: 50px;
-    --sustainableBannerMarginTop1: calc(0.7*10vw);
-    --sustainableBannerMarginTop2: calc(0.5*6vw)
-
-   
-
+    /* --widthTablet: 70vw; */ /* Not used directly, can be removed if not needed elsewhere */
+    /* --sustainableTextWidth: 44vw; */
+    /* --sustainableMobilePadding: 5vw; */
+    /* --sustainableTabletPadding: 14vw; */
+    /* --sustainablePaddingTop: 50px; */
+    /* --sustainableBannerMarginTop1: calc(0.7*10vw); */
+    /* --sustainableBannerMarginTop2: calc(0.5*6vw); */
 }
 
-@media screen and (min-width: 300px) { 
-.materiais{
-    background-color: var(--metaliumGreyColor1);
-    width:100vw;
-    height:auto;
-}
+@media screen and (min-width: 300px) {
+    .materiais{
+        background-color: var(--metaliumWhiteColor1); /* Changed from GreyColor1 for better contrast with BlueColor2 text */
+        width:100%; /* Changed from 100vw */
+        height:auto;
+        padding: 30px 0;
+    }
 
-.materiaisTitle{
-    font-family:var(--mainFontFamily);
-    font-style: normal;
-    font-weight: var(--superBold);
-    text-align: center;
-    color: var(--metaliumBlueColor2)
+    .materiaisTitle{
+        font-family:var(--mainFontFamily);
+        font-style: normal;
+        font-weight: var(--superBold);
+        text-align: center;
+        color: var(--metaliumBlueColor2);
+        font-size: var(--titleFontSize1); /* 36px */
+        margin-bottom: 30px;
+        padding: 0 15px;
+    }
+    .materiaisBtn{
+        width: 90vw;
+        max-width: 300px; /* Cap width */
+        margin-left:auto;
+        margin-right: auto;
+        display: block; /* For auto margin */
+        height:auto;
+        padding: 15px;
+        font-size: var(--metaliumFontSize4); /* 20px */
+        line-height: var(--metaliumLineHeight3);
+        font-weight: var(--normalBoldWeight);
+        background-color: var(--metaliumBlueColor2);
+        color: var(--whiteColor);
+        cursor: pointer;
+        border-radius: var(--metaliumBorderRadius5);
+        border: none;
+        margin-top: 40px;
+    }
 
+    .materiaisFigcaption{
+        text-align:center;
+        font-weight: var(--superBold);
+        font-size: var(--metaliumFontSize4); /* 20px */
+        line-height: var(--metaliumLineHeight1);
+        background: var(--metaliumBlueColor1);
+        color: var(--whiteColor); /* Assuming --colorWhite was meant to be var(--whiteColor) */
+        padding: 10px;
+        border-top-left-radius: var(--metaliumBorderRadius3);
+        border-top-right-radius: var(--metaliumBorderRadius3);
+    }
+    .materiaisFigure1, .materiaisFigure2, .materiaisFigure3, .materiaisFigure4,
+    .materiaisFigure5, .materiaisFigure6{
+        width: 80vw;
+        max-width: 350px; /* Cap width */
+        margin-left:auto;
+        margin-right: auto;
+        margin-top: 5vh; /* Reduced from 10vh */
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        border-radius: var(--metaliumBorderRadius3);
+        overflow: hidden; /* To respect border-radius for image */
 
+    }
 
-}
-.materiaisBtn{
-    width: 90vw;
-    margin-left:5vw;
-    height:10vh;
-    font-size: 20px;     
-    line-height: 26px;
-    font-weight: var(--normalBoldWeight);
-    background-color: var(--metaliumBlueColor2);
-    color: var(--whiteColor);
-    cursor: pointer;
-    border-radius: var(--metaliumBorderRadius5);
-
-}
-
-.materiaisFigcaption{
-    text-align:center;
-    font-weight: var(--superBold);
-    font-size: 20px;
-    line-height: var(--metaliumLineHeight1);
-    background: var(--metaliumBlueColor1);
-    color: var(--colorWhite);
-}
-.materiaisFigure1, .materiaisFigure2, .materiaisFigure3, .materiaisFigure4, 
-.materiaisFigure5, .materiaisFigure6{
-
-    width: 80vw;
-    margin-left:10vw;
-    margin-top: 10vh;
-
-}
-
-.materiaisImg{
-    width: 80vw;
-}
-.materiaisGridContainer{
-display:block;
-}
-}
-@media screen and (min-width: 550px) { 
+    .materiaisImg{
+        width: 100%; /* Was 80vw, now 100% of figure */
+        height: auto;
+        display: block; /* Remove extra space below image */
+    }
     .materiaisGridContainer{
-display:grid;
-grid-template-columns:1fr,1fr;
-grid-template-rows:1fr,1fr,1fr;
+        display:block;
+        padding: 0 10px; /* Add some padding for figures on mobile */
+    }
 }
+@media screen and (min-width: 550px) {
+    .materiaisGridContainer{
+        display:grid;
+        grid-template-columns:1fr 1fr; /* Corrected comma to space */
+        grid-template-rows:auto auto auto; /* Use auto */
+        gap: 20px; /* Add gap */
+        padding: 0 20px; /* Padding for the grid container */
+        max-width: 800px; /* Max width for 2-column grid */
+        margin: 0 auto; /* Center the grid */
+    }
 
-.materiaisFigure1, .materiaisFigure2, .materiaisFigure3, .materiaisFigure4, 
-.materiaisFigure5, .materiaisFigure6{
+    .materiaisFigure1, .materiaisFigure2, .materiaisFigure3, .materiaisFigure4,
+    .materiaisFigure5, .materiaisFigure6{
+        width: 100%; /* Fill grid cell, was 36vw */
+        max-width: none; /* Remove previous max-width if grid controls it */
+        /* margin-left:4vw; */ /* Not needed with grid gap */
+        margin-left: 0;
+        /* margin-top: 10vh; */ /* Handled by grid gap or can be added if needed */
+        margin-top: 0;
+    }
 
-    width: 36vw;
-    margin-left:4vw;
-    margin-top: 10vh;
+    .materiaisImg{
+        /* width:36vw; */ /* Now 100% of figure */
+    }
+    /* Figure placements are fine, will adapt to grid */
+}
+@media screen and (min-width: 890px) {
 
-}
+    .materiais{
+        /* width: 100%; */ /* Already set */
+        padding: 50px 0;
+    }
 
-.materiaisImg{
-    width:36vw;
-}
-.materiaisFigure1{
-    grid-column:1;
-    grid-row:1;
-}
-.materiaisFigure2{
-    grid-column:2;
-    grid-row:1;
-}
-.materiaisFigure3{
-    grid-column:1;
-    grid-row:2;
-}
-.materiaisFigure4{
-    grid-column:2;
-    grid-row:2;
-
-}
-.materiaisFigure5{
-    grid-column:1;
-    grid-row:3;
-}
-
-.materiaisFigure6{
-    grid-column:2;
-    grid-row:3;
-}
-}
-@media screen and (min-width: 890px) { 
-
-.materiais{
-    width: 100%;
- 
-}
-
-.materiaisTitle{
-    font-size: var(--titleFontSize2);
-}
+    .materiaisTitle{
+        font-size: var(--titleFontSize2); /* 42px */
+        margin-bottom: 50px;
+    }
 
 
-.materiaisBtn{
-    height: 30px;   
-   
-    margin-bottom: 40px;
-   
-    width:33vw;
-    margin-left: 34vw;
+    .materiaisBtn{
+        /* height: 30px; */ /* Use padding for height */
+        padding: 12px 25px;
+        /* margin-bottom: 40px; */ /* Already has margin-top */
+        /* width:33vw; */
+        max-width: 330px; /* Adjusted from 33vw */
+        /* margin-left: 34vw; */ /* Centered with auto margins */
+        margin-top: 50px;
+        font-size: var(--metaliumFontSize4);
+    }
+
+    .materiaisGridContainer{
+        grid-template-columns: repeat(3, 1fr); /* Was 1fr, 1fr, 1fr */
+        grid-template-rows: auto auto; /* Use auto */
+        gap: 25px;
+        max-width: 1200px; /* Max width for 3-column grid */
+        padding: 0 30px;
+    }
+
+    .materiaisFigure1, .materiaisFigure2, .materiaisFigure3, .materiaisFigure4,
+    .materiaisFigure5, .materiaisFigure6{
+        /* width: 25vw; */ /* Fill grid cell */
+        /* margin-left:3vw; */
+    }
+
+    .materiaisImg{
+        /* width:25vw; */ /* Fill figure */
+    }
+    /* Figure placements are fine */
 }
 
-      
+/* New media query for very large screens */
+@media screen and (min-width: 1301px) {
+    .materiais {
+        padding: 70px 0;
+    }
+    .materiaisTitle {
+        font-size: var(--titleFontSize3); /* 48px */
+        /* font-size: clamp(var(--titleFontSize2), 3vw, var(--titleFontSize4)); */
+        margin-bottom: 60px;
+    }
 
-      
+    .materiaisGridContainer {
+        max-width: 1500px; /* Max width for the grid */
+        gap: 30px;
+        padding: 0 40px;
+    }
+    .materiaisFigcaption{
+        font-size: var(--metaliumFontSize5); /* 22px */
+        padding: 12px;
+    }
 
-
-.materiaisFigure1, .materiaisFigure2, .materiaisFigure3, .materiaisFigure4, 
-.materiaisFigure5, .materiaisFigure6{
-
-    width: 25vw;
-    margin-left:3vw;
-    margin-top: 10vh;
-
+    .materiaisBtn {
+        max-width: 380px;
+        padding: 15px 30px;
+        font-size: var(--metaliumFontSize5); /* 22px */
+        margin-top: 60px;
+    }
 }
 
-.materiaisImg{
-    width:25vw;
-}
-
-.materiaisGridContainer{
-    display:grid;
-    grid-template-columns: 1fr, 1fr, 1fr;
-    grid-template-rows: 1fr,1fr;
-}
-
-.materiaisFigure1{
-    grid-column:1;
-    grid-row:1;
-}
-.materiaisFigure2{
-    grid-column:2;
-    grid-row:1;
-}
-.materiaisFigure3{
-    grid-column:3;
-    grid-row:1;
-}
-.materiaisFigure4{
-    grid-column:1;
-    grid-row:2;
-
-}
-.materiaisFigure5{
-    grid-column:2;
-    grid-row:2;
-}
-
-.materiaisFigure6{
-    grid-column:3;
-    grid-row:2;
-}
+@media screen and (min-width: 1921px) {
+    .materiais {
+        padding: 90px 0;
+    }
+    .materiaisTitle {
+        font-size: var(--titleFontSize4); /* 56px */
+        margin-bottom: 70px;
+    }
+     .materiaisGridContainer {
+        max-width: 1800px; /* Or more if design allows, up to 4 items per row */
+        /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Example for more fluid columns */
+        /* grid-template-columns: repeat(4, 1fr); */ /* If you want 4 columns */
+        gap: 40px;
+        padding: 0 50px;
+    }
+    .materiaisFigcaption {
+        font-size: var(--metaliumFontSize6); /* 24px */
+        padding: 15px;
+    }
+     .materiaisBtn {
+        max-width: 420px;
+        padding: 18px 35px;
+        font-size: var(--metaliumFontSize6); /* 24px */
+        margin-top: 70px;
+    }
 }
